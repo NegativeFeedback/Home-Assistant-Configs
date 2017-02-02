@@ -1,0 +1,9 @@
+*secret* filter=git-crypt diff=git-crypt
+secret filter=git-crypt diff=git-crypt
+*.key filter=git-crypt diff=git-crypt
+secrets.yaml filter=git-crypt diff=git-crypt
+secretfile filter=git-crypt diff=git-crypt
+*.key filter=git-crypt diff=git-crypt
+*.password filter=git-crypt diff=git-crypt
+*.persist filter=git-crypt diff=git-crypt
+*.cfg filter=git-crypt diff=git-crypt
