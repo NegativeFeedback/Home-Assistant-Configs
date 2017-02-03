@@ -1,58 +1,107 @@
 homeassistant:
-  # Name of the location where Home Assistant is running
   name: Home
-  # Location required to calculate the time the sun rises and sets
-  latitude: 38.7385
-  longitude: -90.5402
-  # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: 162
-  # metric for Metric, imperial for Imperial
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  elevation: !secret homeassistant_elevation
   unit_system: imperial
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/Chicago
-
-# Show links to resources in log and frontend
-#introduction:
-
-# Enables the frontend
-frontend:
+  customize: !include_dir_merge_named customize  
 
 http:
-  # Uncomment this to add a password (recommended!)
-  # api_password: PASSWORD
-  # Uncomment this if you are using SSL or running in Docker etc
-  # base_url: example.duckdns.org:8123
-
-# Checks for available updates
-updater:
-
-# Discover some devices automatically
+  api_password: !secret http_api_password
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
+  trusted_networks:
+    - 127.0.0.1
+  ip_ban_enabled: True
+  login_attempts_threshold: 3
+  
+frontend:
+panel_iframe:
+  router:
+    title: 'Router'
+    icon: 'mdi:router-wireless'
+    url: 'https://10.0.0.1'
+  
+group: !include_dir_merge_named group
+device_tracker: !include_dir_merge_list device_tracker
 discovery:
-
-# Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
-
-# Enables support for tracking state changes over time.
-history:
-
-# View all events in a logbook
-logbook:
-
-# Track the sun
+updater:
 sun:
 
-# Weather Prediction
-sensor:
-  platform: yr
+light:
+  - platform: hue
+    host: 192.168.10.75
+    allow_unreachable: true
+    allow_in_emulated_hue: false
+    allow_hue_groups: false
 
-# Text to speech
-tts:
-  platform: google
+# Reference : https://www.flexfireleds.com/pages/Comparison-between-3528-LEDs-and-5050-LEDs.html    
+  - platform: flux_led
+    automatic_add: True 
+    devices:
+      192.168.10.150:
+        name: Garage_Left
+        mode: "rgb"
+      192.168.10.167:
+        name: Garage_Small
+        mode: "rgb"
+      192.168.10.168:
+        name: Outdoor_Den
+        mode: "rgb"
+        
+    
+ifttt:
+  key: !secret ifttt_key
+
+# history:
+
+logbook:
+  exclude:
+    entities:
+      - sensor.since_last_boot
+      - sensor.since_last_boot_templated
+      - sensor.garadget_small_status
+      - sensor.garadget_large_status
+      - sensor.garadget_small_time_in_state
+      - sensor.garadget_large_time_in_state
+      - sensor.garadget_large_wifi_signal_strength
+      - sensor.garadget_small_wifi_signal_strength
+      - sensor.garadget_small_reflection_rate
+      - sensor.garadget_large_reflection_rate
+      - group.garage_doors
+      - sensor.time
+      - sensor.date
+#logger:
+#  default: info
+recorder:
+  purge_days: 7
+
+mqtt:
+  broker: 127.0.0.1
+  port: 1883
+  client_id: home-assistant-1
+  username: !secret MQTT_username
+  password: !secret MQTT_password
+    
+
+media_player:
+  platform: cast
+  host: 192.168.10.105  
+  
+  
+  
+sensor: !include_dir_merge_list sensor
+automation: !include_dir_merge_list automation
+scene: !include_dir_merge_list scene
+switch: !include_dir_merge_list switch
+script: !include_dir_merge_named script
+input_boolean: !include_dir_merge_named input_boolean
 
 insteon_local:
   host: 10.0.0.132
-  username: Zc5L9xIPBI
-  password: tucker22
+  username: !secret insteonuser
+  password: !secret insteonpass
   timeout: 10
   port: 25105
 
