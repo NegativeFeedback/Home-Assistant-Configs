@@ -8,10 +8,12 @@ homeassistant:
   customize: !include_dir_merge_named customize  
 
 http:
+  base_url: !secret http_base_url
   api_password: !secret http_api_password
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
   trusted_networks:
+    - 10.0.0.0/24
     - 127.0.0.1
   ip_ban_enabled: True
   login_attempts_threshold: 3
@@ -21,35 +23,12 @@ panel_iframe:
   router:
     title: 'Router'
     icon: 'mdi:router-wireless'
-    url: 'https://10.0.0.1'
+    url: 'http://10.0.0.1'
   
 group: !include_dir_merge_named group
-device_tracker: !include_dir_merge_list device_tracker
 discovery:
 updater:
 sun:
-
-light:
-  - platform: hue
-    host: 192.168.10.75
-    allow_unreachable: true
-    allow_in_emulated_hue: false
-    allow_hue_groups: false
-
-# Reference : https://www.flexfireleds.com/pages/Comparison-between-3528-LEDs-and-5050-LEDs.html    
-  - platform: flux_led
-    automatic_add: True 
-    devices:
-      192.168.10.150:
-        name: Garage_Left
-        mode: "rgb"
-      192.168.10.167:
-        name: Garage_Small
-        mode: "rgb"
-      192.168.10.168:
-        name: Outdoor_Den
-        mode: "rgb"
-        
     
 ifttt:
   key: !secret ifttt_key
@@ -80,23 +59,9 @@ recorder:
 mqtt:
   broker: 127.0.0.1
   port: 1883
-  client_id: home-assistant-1
+  client_id: jarvis.gddnet.io
   username: !secret MQTT_username
   password: !secret MQTT_password
-    
-
-media_player:
-  platform: cast
-  host: 192.168.10.105  
-  
-  
-  
-sensor: !include_dir_merge_list sensor
-automation: !include_dir_merge_list automation
-scene: !include_dir_merge_list scene
-switch: !include_dir_merge_list switch
-script: !include_dir_merge_named script
-input_boolean: !include_dir_merge_named input_boolean
 
 insteon_local:
   host: 10.0.0.132
@@ -104,12 +69,21 @@ insteon_local:
   password: !secret insteonpass
   timeout: 10
   port: 25105
-
-light:
-  - platform: insteon_local
   
-switch:
-  - platform: insteon_local
-
 zwave:
-  usb_path: /dev/ttyACM0
+ usb_path: /dev/ttyACM0
+  
+tts:
+  - platform: google
+    language: 'en-us'
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 300
+  
+sensor: !include_dir_merge_list sensor
+automation: !include_dir_merge_list automation
+scene: !include_dir_merge_list scene
+switch: !include_dir_merge_list switch
+light: !include_dir_merge_list light
+script: !include_dir_merge_named script
+input_boolean: !include_dir_merge_named input_boolean
