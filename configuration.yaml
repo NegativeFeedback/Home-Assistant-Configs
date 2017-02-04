@@ -29,10 +29,6 @@ group: !include_dir_merge_named group
 discovery:
 updater:
 sun:
-    
-ifttt:
-  key: !secret ifttt_key
-
 # history:
 
 logbook:
