@@ -53,7 +53,7 @@ recorder:
   purge_days: 7
 
 mqtt:
-  broker: 127.0.0.1
+  broker: jarvis.gddnet.io
   port: 1883
   client_id: jarvis.gddnet.io
   username: !secret MQTT_username
