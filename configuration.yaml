@@ -53,11 +53,29 @@ recorder:
   purge_days: 7
 
 mqtt:
-  broker: jarvis.gddnet.io
+  broker: jarvis.gddnet.com
   port: 1883
-  client_id: jarvis.gddnet.io
+  client_id: jarvis
+  keepalive: 60
   username: !secret MQTT_username
   password: !secret MQTT_password
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+    qos: 1
+    retain: true
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
+    qos: 1
+    retain: true
+device_tracker:
+  - platform: owntracks
+    max_gps_accuracy: 200
+    waypoints: True
+    waypoint_whitelist:
+      - jon
+      - zbayne
 
 insteon_local:
   host: 10.0.0.132
@@ -78,8 +96,5 @@ tts:
   
 sensor: !include_dir_merge_list sensor
 automation: !include_dir_merge_list automation
-scene: !include_dir_merge_list scene
 switch: !include_dir_merge_list switch
 light: !include_dir_merge_list light
-script: !include_dir_merge_named script
-input_boolean: !include_dir_merge_named input_boolean
