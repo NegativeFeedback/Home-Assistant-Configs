@@ -24,8 +24,7 @@ panel_iframe:
     title: 'Router'
     icon: 'mdi:router-wireless'
     url: 'http://10.0.0.1'
-  
-group: !include_dir_merge_named group
+config:  
 discovery:
 updater:
 sun:
@@ -83,9 +82,12 @@ insteon_local:
   password: !secret insteonpass
   timeout: 10
   port: 25105
-  
+
+group: !include groups.yaml
+
 zwave:
- usb_path: /dev/ttyACM0
+  device_config: !include zwave_device_config.yaml
+  usb_path: /dev/ttyACM0
   
 tts:
   - platform: google
