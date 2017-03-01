@@ -1,0 +1,21 @@
+  bedroom_view:
+    name: Bedroom
+    view: yes
+    entities:
+      - group.bedroom_lights_card
+      - media_player.zbayne
+  bedroom_lights_card:
+    name: Bedroom
+    entities:
+      - switch.ge_12722_onoff_relay_switch_switch_4_0
+  basement_view:
+    name: Basement
+    view: yes
+    entities:
+      - group.basement_lights_card
+      - media_player.basement
+  basement_lights_card:
+    name: Basement Lights
+    entities:
+      - switch.ge_12722_onoff_relay_switch_switch_3_0
+
