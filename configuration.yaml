@@ -85,6 +85,9 @@ insteon_local:
 
 group: !include groups.yaml
 
+media_player:
+  - platform: plex
+
 zwave:
   device_config: !include zwave_device_config.yaml
   usb_path: /dev/ttyACM0
