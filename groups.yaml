@@ -14,8 +14,13 @@
     entities:
       - group.basement_lights_card
       - media_player.basement
+      - light.hue_white_lamp_3
   basement_lights_card:
     name: Basement Lights
     entities:
       - switch.ge_12722_onoff_relay_switch_switch_3_0
-
+      - switch.bar_lighting
+      - switch.lab_lighting_2
+      - switch.lab_lighting
+      - switch.neon1
+      - light.movie_lighting
