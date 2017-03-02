@@ -24,4 +24,4 @@
       - switch.lab_lighting
       - switch.neon1
       - light.movie_lighting
-      - switch.neon2
+      - light.neon2
