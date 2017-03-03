@@ -6,3 +6,30 @@
     payload_on: "ON"
     payload_off: "OFF"
     retain: true
+
+  - platform: mqtt
+    name: "Switch Test"
+    state_topic: "stat/switchtest/POWER"
+    command_topic: "cmnd/switchtest/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "Deck Light"
+    state_topic: "stat/decklight/POWER"
+    command_topic: "cmnd/decklight/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "Patio Door Lock"
+    state_topic: "stat/patiodoor/POWER"
+    command_topic: "cmnd/patiodoor/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
