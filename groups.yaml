@@ -13,7 +13,7 @@
     view: yes
     entities:
       - group.basement_lights_card
-      - basement_scenes_card
+      - group.basment_scenes_card
       - media_player.basement
   patio_view:
     name: Patio
