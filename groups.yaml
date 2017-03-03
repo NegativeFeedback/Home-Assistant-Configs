@@ -1,20 +1,71 @@
-  bedroom_view:
-    name: Bedroom
+  second_view:
+    name: Second Floor
+    view: yes
+    entities:
+      - group.zbayne_card
+  first_view:
+    name: First Floor
     view: yes
     entities:
       - group.bedroom_lights_card
-      - media_player.zbayne
-  bedroom_lights_card:
-    name: Bedroom
-    entities:
-      - switch.ge_12722_onoff_relay_switch_switch_4_0
   basement_view:
     name: Basement
     view: yes
     entities:
       - group.basement_lights_card
+      - basement_scenes_card
       - media_player.basement
-      - light.hue_white_lamp_3
+  patio_view:
+    name: Patio
+    view: yes
+    entities:
+      - group.patio_card
+
+  security_view:
+    name: Security
+    view: yes
+    entities:
+
+  admin_view:
+    name: Admin
+    view: yes
+    entities:
+      - group.batteries
+
+
+
+  zbayne_card:
+    name: Zbayne Bedroom
+    entities:
+      - switch.ge_12722_onoff_relay_switch_switch_4_0
+  master_card:
+    name: Master Bedroom
+    entities:
+      - switch.ge_12722_onoff_relay_switch_switch_4_0
+  alex_card:
+    name: Alex Bedroom
+    entities:
+      - switch.ge_12722_onoff_relay_switch_switch_4_0
+  lucas_card:
+    name: Lucas Bedroom
+    entities:
+      - switch.ge_12722_onoff_relay_switch_switch_4_0
+  hall_card:
+    name: Hall
+    entities:
+      - switch.ge_12722_onoff_relay_switch_switch_4_0
+  bathroom_card:
+    name: Bathroom
+    entities:
+      - switch.ge_12722_onoff_relay_switch_switch_4_0
+
+
+  firstlights_card:
+    name: First Floor Lights
+    entities:
+      - switch.ge_12722_onoff_relay_switch_switch_4_0
+
+
   basement_lights_card:
     name: Basement Lights
     entities:
@@ -25,3 +76,19 @@
       - switch.neon1
       - light.movie_lighting
       - light.neon2
+  basement_scenes_card:
+    name: Basement Scenes
+    entities:
+      - switch.ge_12722_onoff_relay_switch_switch_3_0
+      - switch.bar_lighting
+      - switch.lab_lighting_2
+      - switch.lab_lighting
+      - switch.neon1
+      - light.movie_lighting
+      - light.neon2
+
+  patio_card:
+    name: Patio
+    entities:
+      - switch.patio
+      - switch.patiodoor
