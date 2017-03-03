@@ -1,0 +1,3 @@
+  - name: movie_time 
+    entities:
+      switch.ge_12722_onoff_relay_switch_switch_3_0: on

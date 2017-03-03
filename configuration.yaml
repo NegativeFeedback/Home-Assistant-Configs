@@ -46,8 +46,8 @@ logbook:
       - group.garage_doors
       - sensor.time
       - sensor.date
-#logger:
-#  default: info
+logger:
+  default: info
 recorder:
   purge_days: 7
 
@@ -100,6 +100,10 @@ tts:
     time_memory: 300
   
 sensor: !include_dir_merge_list sensor
-automation: !include_dir_merge_list automation
+automation: !include_dir_list automations
 switch: !include_dir_merge_list switch
 light: !include_dir_merge_list light
+# Controls
+input_select: !include input-selects.yaml
+input_slider: !include input-sliders.yaml
+input_boolean: !include input-boolean.yaml

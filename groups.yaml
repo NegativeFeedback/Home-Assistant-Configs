@@ -1,3 +1,9 @@
+  default_view:
+    name: DEFAULT
+    view: yes
+    icon: mdi:home
+    entities:
+      - group.basement_lights_card
   second_view:
     name: Second Floor
     view: yes
@@ -13,7 +19,7 @@
     view: yes
     entities:
       - group.basement_lights_card
-      - group.basment_scenes_card
+      - group.basement_scenes_card
       - media_player.basement
   patio_view:
     name: Patio
@@ -79,14 +85,8 @@
   basement_scenes_card:
     name: Basement Scenes
     entities:
-      - switch.ge_12722_onoff_relay_switch_switch_3_0
-      - switch.bar_lighting
-      - switch.lab_lighting_2
-      - switch.lab_lighting
-      - switch.neon1
-      - light.movie_lighting
+      - input_select.scene_movie
       - light.neon2
-
   patio_card:
     name: Patio
     entities:

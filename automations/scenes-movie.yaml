@@ -1,0 +1,25 @@
+alias: Scene Movie
+trigger:
+  platform: state
+  entity_id: input_select.scene_movie
+action:
+  - service: scene.turn_on
+    data_template:
+      entity_id: >
+        {% if is_state( "input_select.scene_balcony", "Nightlight" ) %}
+          scene.balcony_nightlight
+        {%-elif is_state( "input_select.scene_balcony", "Dimmed" ) %}
+          scene.balcony_dimmed
+        {%-elif is_state( "input_select.scene_balcony", "Relax" ) %}
+          scene.balcony_relax
+        {%-elif is_state( "input_select.scene_balcony", "Read" ) %}
+          scene.balcony_read
+        {%-elif is_state( "input_select.scene_balcony", "Bright" ) %}
+          scene.balcony_concentrate
+        {%-elif is_state( "input_select.scene_balcony", "Off" ) %}
+          scene.balcony_off
+        {% endif %}
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.scene_movie
+      option: "-"
