@@ -4,6 +4,8 @@
     icon: mdi:home
     entities:
       - group.basement_lights_card
+      - switch.switchtest
+      - switch.sonofftest
   second_view:
     name: Second Floor
     view: yes
@@ -47,29 +49,43 @@
   master_card:
     name: Master Bedroom
     entities:
-      - switch.ge_12722_onoff_relay_switch_switch_4_0
+      - switch.masterlights
   alex_card:
     name: Alex Bedroom
     entities:
-      - switch.ge_12722_onoff_relay_switch_switch_4_0
+      - switch.alexlights
   lucas_card:
     name: Lucas Bedroom
     entities:
-      - switch.ge_12722_onoff_relay_switch_switch_4_0
+      - switch.lucas
   hall_card:
     name: Hall
     entities:
-      - switch.ge_12722_onoff_relay_switch_switch_4_0
+      - switch.halllights
   bathroom_card:
-    name: Bathroom
+    name: Hall Bathroom
     entities:
-      - switch.ge_12722_onoff_relay_switch_switch_4_0
+      - switch.hallbathlights
 
 
   firstlights_card:
     name: First Floor Lights
     entities:
-      - switch.ge_12722_onoff_relay_switch_switch_4_0
+      - switch.livingroomtalllight
+      - switch.livingroomcouchrightlight
+      - switch.livingroomcouchleftlight
+      - switch.fronthalllight
+      - switch.porchlight
+      - switch.backporchlight
+      - switch.diningroomlights
+      - switch.kitchenlights
+      - switch.garagelights
+      - switch.patiodoor
+      - switch.frontdoor
+      - switch.backdoor
+      - switch.kitchenhalllights
+      - switch.bathroomlights
+      - switch.otherlight
 
 
   basement_lights_card:
@@ -86,9 +102,8 @@
     name: Basement Scenes
     entities:
       - input_select.scene_movie
-      - light.neon2
   patio_card:
     name: Patio
     entities:
-      - switch.patio
+      - switch.Patio_Lighting
       - switch.patiodoor

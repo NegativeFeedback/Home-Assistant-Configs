@@ -1,5 +1,5 @@
   - platform: mqtt
-    name: "Sonoff power"
+    name: "sonofftest"
     state_topic: "stat/test/POWER"
     command_topic: "cmnd/test/POWER"
     qos: 1
@@ -8,7 +8,7 @@
     retain: true
 
   - platform: mqtt
-    name: "Switch Test"
+    name: "switchtest"
     state_topic: "stat/switchtest/POWER"
     command_topic: "cmnd/switchtest/POWER"
     qos: 1
@@ -17,19 +17,72 @@
     retain: true
 
   - platform: mqtt
-    name: "Deck Light"
-    state_topic: "stat/decklight/POWER"
-    command_topic: "cmnd/decklight/POWER"
+    name: "backporchlight"
+    state_topic: "stat/backporchlight/POWER"
+    command_topic: "cmnd/backporchlight/POWER"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
     retain: true
 
   - platform: mqtt
-    name: "Patio Door Lock"
+    name: "patiodoor"
     state_topic: "stat/patiodoor/POWER"
     command_topic: "cmnd/patiodoor/POWER"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
     retain: true
+
+  - platform: mqtt
+    name: "livingroomtalllight"
+    state_topic: "stat/livingroomtalllight/POWER"
+    command_topic: "cmnd/livingroomtalllight/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "livingroomcouchrightlight"
+    state_topic: "stat/livingroomcouchrightlight/POWER"
+    command_topic: "cmnd/livingroomcouchrightlight/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "livingroomcouchleftlight"
+    state_topic: "stat/livingroomcouchleftlight/POWER"
+    command_topic: "cmnd/livingroomcouchleftlight/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "fronthalllight"
+    state_topic: "stat/fronthalllight/POWER"
+    command_topic: "cmnd/fronthalllight/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+
+
+
+
+
+      # - switch.porchlight
+      # - switch.backporchlight
+      # - switch.diningroomlights
+      # - switch.kitchenlights
+      # - switch.garagelights
+      # - switch.patiodoor
+      # - switch.frontdoor
+      # - switch.backdoor
+      # - switch.kitchenhalllights
+      # - switch.bathroomlights
+      # - switch.otherlight
