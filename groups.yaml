@@ -38,7 +38,7 @@
     name: Admin
     view: yes
     entities:
-      - group.batteries
+      - group.battery_card
 
 
 
@@ -114,3 +114,7 @@
     entities:
       - switch.Patio_Lighting
       - switch.patiodoor
+  battery_card:
+    name: Batteries
+    entities:
+      - binary_sensor.ecolink_doorwindow_sensor_sensor_2_0
