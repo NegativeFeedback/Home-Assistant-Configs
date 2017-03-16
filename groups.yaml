@@ -15,7 +15,7 @@
     name: First Floor
     view: yes
     entities:
-      - group.bedroom_lights_card
+      - group.firstlights_card
   basement_view:
     name: Basement
     view: yes
@@ -71,6 +71,9 @@
   firstlights_card:
     name: First Floor Lights
     entities:
+      - light.hue_white_lamp_1
+      - light.hue_white_lamp_2
+      - light.hue_white_lamp_3
       - switch.livingroomtalllight
       - switch.livingroomcouchrightlight
       - switch.livingroomcouchleftlight
@@ -98,6 +101,10 @@
       - switch.neon1
       - light.movie_lighting
       - light.neon2
+      - light.hue_white_lamp_1
+      - light.hue_white_lamp_2
+      - light.hue_white_lamp_3
+
   basement_scenes_card:
     name: Basement Scenes
     entities:
