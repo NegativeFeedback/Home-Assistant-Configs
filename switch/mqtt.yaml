@@ -26,7 +26,7 @@
     retain: true
 
   - platform: mqtt
-    name: "Patio Fountain"
+    name: "Patio_Fountain"
     state_topic: "stat/Patiofountain/POWER"
     command_topic: "cmnd/Patiofountain/POWER"
     qos: 1
@@ -35,7 +35,7 @@
     retain: true
 
   - platform: mqtt
-    name: "Patio Music"
+    name: "Patio_Music"
     state_topic: "stat/Patiomusic/POWER"
     command_topic: "cmnd/Patiomusic/POWER"
     qos: 1
