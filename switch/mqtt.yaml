@@ -26,9 +26,18 @@
     retain: true
 
   - platform: mqtt
-    name: "patiodoor"
-    state_topic: "stat/patiodoor/POWER"
-    command_topic: "cmnd/patiodoor/POWER"
+    name: "Patio Fountain"
+    state_topic: "stat/Patiofountain/POWER"
+    command_topic: "cmnd/Patiofountain/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "Patio Music"
+    state_topic: "stat/Patiomusic/POWER"
+    command_topic: "cmnd/Patiomusic/POWER"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
