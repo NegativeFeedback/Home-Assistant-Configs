@@ -110,3 +110,8 @@ light: !include_dir_merge_list light
 input_select: !include input-selects.yaml
 input_slider: !include input-sliders.yaml
 input_boolean: !include input-boolean.yaml
+notify:
+  - name: zbayne
+    platform: pushover
+    api_key: !secret a8677mwaengcywjm3vgzf8dzyso91t
+    user_key: !secret u6v1un7h4pyvtr5vqzjh2a67ci9mr4
