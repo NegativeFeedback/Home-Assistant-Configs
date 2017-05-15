@@ -2,7 +2,7 @@ homeassistant:
 name: Home
 latitude: !secret homeassistant_latitude
 longitude: !secret homeassistant_longitude
-elevation: !secrethomeassistant_elevation
+elevation: !secret homeassistant_elevation
 unit_system: imperial
 time_zone: America/Chicago
 customize: !include_dir_merge_named customize
