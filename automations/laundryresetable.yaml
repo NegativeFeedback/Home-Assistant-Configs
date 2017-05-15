@@ -1,4 +1,3 @@
-automation:
   alias: Turn on Laundry lights when there is movement
   trigger:
     - platform: state
