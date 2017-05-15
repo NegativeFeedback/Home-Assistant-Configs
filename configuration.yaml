@@ -1,11 +1,11 @@
 homeassistant:
-name: Home
-latitude: !secret homeassistant_latitude
-longitude: !secret homeassistant_longitude
-elevation: !secret homeassistant_elevation
-unit_system: imperial
-time_zone: America/Chicago
-customize: !include_dir_merge_named customize
+  name: Home
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  elevation: !secret homeassistant_elevation
+  unit_system: imperial
+  time_zone: America/Chicago
+  customize: !include_dir_merge_named customize
 
 http:
 # base_url: !secret http_base_url
