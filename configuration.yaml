@@ -1,11 +1,7 @@
-homeassistant:
-  name: Home
-  latitude: !secret homeassistant_latitude
-  longitude: !secret homeassistant_longitude
-  elevation: !secret homeassistant_elevation
-  unit_system: imperial
-  time_zone: America/Chicago
-  customize: !include_dir_merge_named customize  
+homeassistant:   name: Home   latitude: !secret homeassistant_latitude
+longitude: !secret homeassistant_longitude   elevation: !secret
+homeassistant_elevation   unit_system: imperial   time_zone: America/Chicago
+customize: !include_dir_merge_named customize
 
 http:
 # base_url: !secret http_base_url
@@ -23,7 +19,7 @@ panel_iframe:
   router:
     title: 'Router'
     icon: 'mdi:router-wireless'
-    url: 'http://10.0.0.1'
+    url: 'https://10.0.0.1:8081'
 config:  
 discovery:
 updater:
@@ -87,6 +83,9 @@ group: !include groups.yaml
 
 media_player:
   - platform: plex
+  - platform: roku 
+  - platform: cast
+
 
 zwave:
   device_config: !include zwave_device_config.yaml
