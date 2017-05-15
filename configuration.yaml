@@ -113,5 +113,5 @@ input_boolean: !include input-boolean.yaml
 notify:
   - name: zbayne
     platform: pushover
-    api_key: !secret a8677mwaengcywjm3vgzf8dzyso91t
-    user_key: !secret u6v1un7h4pyvtr5vqzjh2a67ci9mr4
+    api_key: !secret pushoverzbayne
+    user_key: !secret pushoveruserkey
