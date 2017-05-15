@@ -1,4 +1,6 @@
-homeassistant:   name: Home   latitude: !secret homeassistant_latitude
+homeassistant:
+name: Home
+latitude: !secret homeassistant_latitude
 longitude: !secret homeassistant_longitude   elevation: !secret
 homeassistant_elevation   unit_system: imperial   time_zone: America/Chicago
 customize: !include_dir_merge_named customize
@@ -13,14 +15,14 @@ http:
     - 127.0.0.1
   ip_ban_enabled: True
   login_attempts_threshold: 3
-  
+
 frontend:
 panel_iframe:
   router:
     title: 'Router'
     icon: 'mdi:router-wireless'
     url: 'https://10.0.0.1:8081'
-config:  
+config:
 discovery:
 updater:
 sun:
@@ -83,21 +85,21 @@ group: !include groups.yaml
 
 media_player:
   - platform: plex
-  - platform: roku 
+  - platform: roku
   - platform: cast
 
 
 zwave:
   device_config: !include zwave_device_config.yaml
   usb_path: /dev/ttyACM0
-  
+
 tts:
   - platform: google
     language: 'en-us'
     cache: true
     cache_dir: /tmp/tts
     time_memory: 300
-  
+
 sensor: !include_dir_merge_list sensor
 automation: !include_dir_list automations
 switch: !include_dir_merge_list switch
