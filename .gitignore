@@ -16,3 +16,4 @@ phue.conf
 pyozw.sqlite
 nest.conf
 .uuid
+*.state
