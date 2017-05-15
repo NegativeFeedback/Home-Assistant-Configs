@@ -1,0 +1,1 @@
+{"38EC29": {"0000": {"response": {"im_code": "50", "im_code_desc": "Standard Message Received", "raw": "025038EC292AD4872F0000", "id_from": "38EC29", "id_high": "2A", "id_mid": "D4", "id_low": "87", "flag1": "2", "flag2": "F", "cmd1": "00", "cmd2": "00", "error": false, "success": true}, "ttl": 1491722098}}}

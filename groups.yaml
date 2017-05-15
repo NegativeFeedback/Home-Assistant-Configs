@@ -114,8 +114,8 @@
     entities:
       - switch.Patio_Lighting
       - switch.patiodoor
-      - switch.Patiofountain
-      - switch.Patiomusic
+      - switch.Patio_Fountain
+      - switch.Patio_Music
   battery_card:
     name: Batteries
     entities:
