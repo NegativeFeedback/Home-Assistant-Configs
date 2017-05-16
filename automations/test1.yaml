@@ -1,0 +1,10 @@
+alias: "Turn on kitchen light when there is"
+trigger:
+  - platform: state
+    entity_id: group.all_devices
+    state: 'not_home'
+    for:
+      minutes: 1
+action:
+  - service: homeassistant.turn_off
+    entity_id: light.hue_white_lamp_3

@@ -1,0 +1,2 @@
+shell_command:
+  gitpull: git pull
