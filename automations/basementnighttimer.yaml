@@ -1,0 +1,11 @@
+alias: "Turn off basement Lights Timer"
+trigger:
+  - platform: state
+    entity_id: basement_lights_card
+    state: 'on'
+    for:
+      minutes: 60
+action:
+  - service: homeassistant.turn_off
+    entity_id: basement_lights_card
+#group.basement_lights_card
