@@ -6,6 +6,7 @@
       - group.basement_lights_card
       - switch.switchtest
       - switch.sonofftest
+      - group.all_lights
   second_view:
     name: Second Floor
     view: yes
@@ -39,7 +40,6 @@
     view: yes
     entities:
       - group.battery_card
-
 
 
   zbayne_card:
@@ -104,6 +104,7 @@
       - light.hue_white_lamp_1
       - light.hue_white_lamp_2
       - light.hue_white_lamp_3
+      - light.porch_strip
 
   basement_scenes_card:
     name: Basement Scenes
@@ -120,3 +121,5 @@
     name: Batteries
     entities:
       - binary_sensor.ecolink_doorwindow_sensor_sensor_2_0
+      - binary_sensor.__sensor_5_0
+      - binary_sensor.ecolink_unknown_type0004_id0001_sensor_5_0
