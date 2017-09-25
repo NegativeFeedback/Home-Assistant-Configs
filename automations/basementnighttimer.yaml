@@ -5,6 +5,9 @@ trigger:
     state: 'on'
     for:
       minutes: 60
+  - condition:: Time
+    after: '22:00:00'
+    before: '12:00:00'
 action:
   - service: homeassistant.turn_off
     entity_id: basement_lights_card
