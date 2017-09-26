@@ -5,5 +5,5 @@ trigger:
     state: 'on'
 action:
   - service: homeassistant.turn_on
-    entity_id: light.hue_white_lamp_3
+    entity_id: switch.ge_12722_onoff_relay_switch_switch_3_0
 
