@@ -1,7 +1,7 @@
 alias: "Turn off laundry lights timer after movement"
 trigger:
   - platform: state
-    entity_id: sensor.laundrymove
+    entity_id: binary_sensor.ecolink_unknown_type0004_id0001_sensor_5_0
     state: 'off'
     for:
       minutes: 1
