@@ -2,8 +2,8 @@
     name: Party Mode(disables after hours timers)
     initial: off
   disable_basement_timer:
-    name: Party Mode(disables after hours timers)
+    name: Disable basment timers
     initial: off
   disable_patio_timer:
-    name: Party Mode(disables after hours timers)
+    name: Disable patio timers
     initial: off
