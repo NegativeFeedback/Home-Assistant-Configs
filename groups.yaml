@@ -128,5 +128,5 @@
     name: Overrides
     entities:
       - input_boolean.party_mode
-      - disable_basement_timer
-      - disable_patio_timer
+      - input_boolean.disable_basement_timer
+      - input_boolean.disable_patio_timer
