@@ -5,6 +5,13 @@ trigger:
     state: 'on'
     for:
       minutes: 60
+condition:
+  - condition: state
+    entity_id: input_boolean.disable_basement_timer
+    state: 'off'
+  - condition: time
+    after: '22:00'
+    before: '16:00'
 action:
   - service: homeassistant.turn_off
     entity_id: group.basement_lights_card
