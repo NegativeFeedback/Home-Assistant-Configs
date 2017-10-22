@@ -1,3 +1,9 @@
-  living_room_light_manual_mode:
-    name: Living Room Lights Manual Mode
+  party_mode:
+    name: Party Mode(disables after hours timers)
+    initial: off
+  disable_basement_timer:
+    name: Party Mode(disables after hours timers)
+    initial: off
+  disable_patio_timer:
+    name: Party Mode(disables after hours timers)
     initial: off

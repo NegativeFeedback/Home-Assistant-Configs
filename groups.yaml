@@ -40,6 +40,7 @@
     view: yes
     entities:
       - group.battery_card
+      - group.override_card
 
 
   zbayne_card:
@@ -123,3 +124,9 @@
       - binary_sensor.ecolink_doorwindow_sensor_sensor_2_0
       - binary_sensor.__sensor_5_0
       - binary_sensor.ecolink_unknown_type0004_id0001_sensor_5_0
+  override_card:
+    name: Overrides
+    entities:
+      - input_boolean.party_mode
+      - disable_basement_timer
+      - disable_patio_timer
