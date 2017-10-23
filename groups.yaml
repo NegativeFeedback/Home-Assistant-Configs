@@ -123,3 +123,6 @@
       - binary_sensor.ecolink_doorwindow_sensor_sensor_2_0
       - binary_sensor.__sensor_5_0
       - binary_sensor.ecolink_unknown_type0004_id0001_sensor_5_0
+      - automation.turn_on_laundry_light_when_there_is_movement
+      - automation.turn_off_laundry_lights_timer_after_movement
+      - automation.turn_off_basement_lights_timer
