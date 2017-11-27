@@ -78,7 +78,7 @@
       - switch.livingroomtalllight
       - switch.livingroomcouchrightlight
       - switch.livingroomcouchleftlight
-      - switch.fronthalllight
+      - switch.Tree
       - switch.porchlight
       - switch.backporchlight
       - switch.diningroomlights
