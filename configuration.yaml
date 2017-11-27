@@ -19,6 +19,7 @@ http:
   login_attempts_threshold: 3
 
 frontend:
+  javascript_version: latest
 panel_iframe:
   router:
     title: 'Router'
@@ -49,7 +50,8 @@ logbook:
 logger:
   default: info
 recorder:
-  purge_days: 7
+  purge_interval: 30
+  purge_keep_days: 7
 
 mqtt:
   broker: jarvis.gddnet.com
@@ -103,12 +105,12 @@ tts:
     time_memory: 300
 
 sensor: !include_dir_merge_list sensor
-automation: !include_dir_list automations
+automation: !include automations.yaml
 switch: !include_dir_merge_list switch
 light: !include_dir_merge_list light
 # Controls
 input_select: !include input-selects.yaml
-input_slider: !include input-sliders.yaml
+#input_slider: !include input-sliders.yaml
 input_boolean: !include input-boolean.yaml
 script: !include_dir_merge_named scripts/
 

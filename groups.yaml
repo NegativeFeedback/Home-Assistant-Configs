@@ -46,7 +46,7 @@
   zbayne_card:
     name: Zbayne Bedroom
     entities:
-      - switch.ge_12722_onoff_relay_switch_switch_4_0
+      - switch.ge_12722_onoff_relay_switch_switch_2
   master_card:
     name: Master Bedroom
     entities:
@@ -95,7 +95,7 @@
   basement_lights_card:
     name: Basement Lights
     entities:
-      - switch.ge_12722_onoff_relay_switch_switch_3_0
+      - switch.ge_12722_onoff_relay_switch_switch
       - switch.bar_lighting
       - switch.lab_lighting_2
       - switch.lab_lighting
