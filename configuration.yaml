@@ -105,9 +105,6 @@ tts:
 
 zoneminder:
   host: camera.ipa.gddnet.com
-  path: zm
-  path_zms: /zm/cgi-bin/nph-zms
-  ssl: False
   username: !secret zmuser
   password: !secret zmpass
 
