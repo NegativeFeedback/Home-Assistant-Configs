@@ -84,7 +84,10 @@ insteon_local:
   password: !secret insteonpass
   timeout: 10
   port: 25105
-
+hue:
+  bridges:
+    - host: 10.0.0.75
+      filename: phue.conf
 group: !include groups.yaml
 
 media_player:
@@ -94,8 +97,13 @@ media_player:
 
 
 zwave:
-  device_config: !include zwave_device_config.yaml
   usb_path: /dev/ttyACM0
+  polling_interval: 30000
+  device_config:
+    switch.ge_12722_onoff_relay_switch_switch:
+      polling_intensity: 1
+    switch.ge_12722_onoff_relay_switch_switch_2:
+      polling_intensity: 1
 
 tts:
   - platform: google

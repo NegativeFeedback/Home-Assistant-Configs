@@ -29,7 +29,7 @@
   trigger:
   - entity_id: group.basement_lights_card
     for:
-      minutes: 1
+      minutes: 60
     platform: state
     to: 'on'
   action:

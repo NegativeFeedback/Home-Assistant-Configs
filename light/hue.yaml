@@ -1,4 +1,5 @@
-  - platform: hue
+ hue:
+  bridges:
     host: 10.0.0.75
     allow_unreachable: true
     allow_in_emulated_hue: false
