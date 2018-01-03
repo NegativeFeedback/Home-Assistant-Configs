@@ -120,6 +120,8 @@ input_select: !include input-selects.yaml
 #input_slider: !include input-sliders.yaml
 input_boolean: !include input-boolean.yaml
 script: !include_dir_merge_named scripts/
+zone: !include zones.yaml
+
 
 notify:
   - name: zbayne
