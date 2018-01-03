@@ -8,9 +8,9 @@
     retain: true
 
   - platform: mqtt
-    name: "switchtest"
-    state_topic: "stat/switchtest/POWER"
-    command_topic: "cmnd/switchtest/POWER"
+    name: "Tree"
+    state_topic: "stat/tree/POWER"
+    command_topic: "cmnd/tree/POWER"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"

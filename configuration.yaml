@@ -19,6 +19,7 @@ http:
   login_attempts_threshold: 3
 
 frontend:
+  javascript_version: latest
 panel_iframe:
   router:
     title: 'Router'
@@ -35,21 +36,14 @@ logbook:
     entities:
       - sensor.since_last_boot
       - sensor.since_last_boot_templated
-      - sensor.garadget_small_status
-      - sensor.garadget_large_status
-      - sensor.garadget_small_time_in_state
-      - sensor.garadget_large_time_in_state
-      - sensor.garadget_large_wifi_signal_strength
-      - sensor.garadget_small_wifi_signal_strength
-      - sensor.garadget_small_reflection_rate
-      - sensor.garadget_large_reflection_rate
       - group.garage_doors
       - sensor.time
       - sensor.date
 logger:
   default: info
 recorder:
-  purge_days: 7
+  purge_interval: 30
+  purge_keep_days: 7
 
 mqtt:
   broker: jarvis.gddnet.com
@@ -73,7 +67,6 @@ device_tracker:
     max_gps_accuracy: 200
     waypoints: True
     waypoint_whitelist:
-      - jon
       - zbayne
 
 insteon_local:
@@ -82,7 +75,10 @@ insteon_local:
   password: !secret insteonpass
   timeout: 10
   port: 25105
-
+hue:
+  bridges:
+    - host: 10.0.0.75
+      filename: phue.conf
 group: !include groups.yaml
 
 media_player:
@@ -92,8 +88,13 @@ media_player:
 
 
 zwave:
-  device_config: !include zwave_device_config.yaml
   usb_path: /dev/ttyACM0
+  polling_interval: 30000
+  device_config:
+    switch.ge_12722_onoff_relay_switch_switch:
+      polling_intensity: 1
+    switch.ge_12722_onoff_relay_switch_switch_2:
+      polling_intensity: 1
 
 tts:
   - platform: google
@@ -102,13 +103,21 @@ tts:
     cache_dir: /tmp/tts
     time_memory: 300
 
+zoneminder:
+  host: camera.ipa.gddnet.com
+  username: !secret zmuser
+  password: !secret zmpass
+
+camera:
+  - platform: zoneminder
+
 sensor: !include_dir_merge_list sensor
-automation: !include_dir_list automations
+automation: !include automations.yaml
 switch: !include_dir_merge_list switch
 light: !include_dir_merge_list light
 # Controls
 input_select: !include input-selects.yaml
-input_slider: !include input-sliders.yaml
+#input_slider: !include input-sliders.yaml
 input_boolean: !include input-boolean.yaml
 script: !include_dir_merge_named scripts/
 

@@ -1,0 +1,71 @@
+- id: turntreeon
+  alias: Turn Tree On
+  initial_state: true
+  hide_entity: false
+  trigger:
+  - at: '17:00:00'
+    platform: time
+  action:
+  - data:
+      entity_id:
+      - switch.tree
+    service: homeassistant.turn_on
+- id: turntreeoff
+  alias: Turn Tree Off
+  initial_state: true
+  hide_entity: false
+  trigger:
+  - at: '22:00:00'
+    platform: time
+  action:
+  - data:
+      entity_id:
+      - switch.tree
+    service: homeassistant.turn_off
+- id: basementlightstimer
+  alias: Turn basment Light off after an hour
+  initial_state: true
+  hide_entity: false
+  trigger:
+  - entity_id: group.basement_lights_card
+    for:
+      minutes: 60
+    platform: state
+    to: 'on'
+  action:
+  - data:
+      entity_id:
+      - group.basement_lights_card
+    service: homeassistant.turn_off
+  condition:
+  - condition: state
+    entity_id: input_boolean.party_mode
+    state: 'off'
+- id: laundrymovement
+  alias: Laundry Light movement
+  initial_state: true
+  hide_entity: false
+  trigger:
+  - entity_id: binary_sensor.ecolink_unknown_type0004_id0001_sensor
+    platform: state
+    to: 'on'
+  action:
+  - data:
+      entity_id:
+      - switch.ge_12722_onoff_relay_switch_switch
+    service: homeassistant.turn_on
+- id: laundrylightstimer
+  alias: Turn laundry Light off after 5 min
+  initial_state: true
+  hide_entity: false
+  trigger:
+  - entity_id: binary_sensor.ecolink_unknown_type0004_id0001_sensor
+    for:
+      minutes: 1
+    platform: state
+    to: 'off'
+  action:
+  - data:
+      entity_id:
+      - switch.ge_12722_onoff_relay_switch_switch
+    service: homeassistant.turn_off
