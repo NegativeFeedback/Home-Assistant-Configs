@@ -42,11 +42,11 @@
       - group.battery_card
       - group.override_card
 
-
   zbayne_card:
     name: Zbayne Bedroom
     entities:
       - switch.ge_12722_onoff_relay_switch_switch_2
+      - camera.monitor1
   master_card:
     name: Master Bedroom
     entities:
