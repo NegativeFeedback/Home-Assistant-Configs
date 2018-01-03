@@ -108,6 +108,9 @@ zoneminder:
   username: !secret zmuser
   password: !secret zmpass
 
+camera:
+  - platform: zoneminder
+
 sensor: !include_dir_merge_list sensor
 automation: !include automations.yaml
 switch: !include_dir_merge_list switch
