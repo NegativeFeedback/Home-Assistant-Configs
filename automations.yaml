@@ -69,7 +69,7 @@
       entity_id:
       - switch.ge_12722_onoff_relay_switch_switch
     service: homeassistant.turn_off
-- id: laundrylightstimer
+- id: notificationtest1
   alias: Notification Text - Test
   trigger:
     - platform: state
