@@ -69,3 +69,17 @@
       entity_id:
       - switch.ge_12722_onoff_relay_switch_switch
     service: homeassistant.turn_off
+- id: laundrylightstimer
+  alias: Notification Text - Test
+  trigger:
+    - platform: state
+      entity_id: input_boolean.test_text_notification
+      from: 'off'
+      to: 'on'
+  action:
+    - service: notify.zbayne
+      data:
+        title: "Home Assistant"
+        message: "This is a test."
+    - service: homeassistant.turn_off
+      entity_id: input_boolean.test_text_notification
