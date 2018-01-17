@@ -1,0 +1,8 @@
+binary_sensor:
+  - platform: mqtt
+    name: "Feed Dog"
+    state_topic: "sensor/feeddog"
+    qos: 1
+    payload_on: "FED"
+    payload_off: "FEED"
+    retain: true
