@@ -1,0 +1,8 @@
+switch.32552a:
+  friendly_name: Patio Light
+group.all_switches:
+  hidden: false
+group.all_lights:
+  hidden: false
+switch.24298f:
+  friendly_name: Test change name

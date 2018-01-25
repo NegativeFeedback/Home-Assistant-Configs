@@ -7,6 +7,9 @@
       - switch.switchtest
       - switch.sonofftest
       - group.all_lights
+      - sensor.Feed_Dog
+      - group.all_lights
+      - group.all_switches
   second_view:
     name: Second Floor
     view: yes
