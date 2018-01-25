@@ -83,3 +83,15 @@
         message: "This is a test."
     - service: homeassistant.turn_off
       entity_id: input_boolean.test_text_notification
+- id: resetfeeddogsensor
+  alias: Reset Feed Dog Sensor
+  initial_state: true
+  hide_entity: false
+  trigger:
+  - at: '23:00:00'
+    platform: time
+  action:
+  - data:
+      entity_id:
+      - binary_sensor.feed_dog
+    service: homeassistant.turn_off

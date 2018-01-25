@@ -4,5 +4,7 @@ group.all_switches:
   hidden: false
 group.all_lights:
   hidden: false
-switch.24298f:
-  friendly_name: Test change name
+switch.ge_12722_onoff_relay_switch_switch_3_0:
+  friendly_name: Laundry Room
+switch.ge_12722_onoff_relay_switch_switch_4_0:
+  friendly_name: Zach's Room
