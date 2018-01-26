@@ -1,116 +1,62 @@
+#################################################################
+## Groups
+#################################################################
+
   default_view:
-    name: DEFAULT
     view: yes
     icon: mdi:home
     entities:
-      - group.basement_lights_card
-      - switch.switchtest
-      - switch.sonofftest
-      - group.all_lights
-      - sensor.Feed_Dog
-      - group.all_lights
-      - group.all_switches
+      - persistent_notification.1
+      - group.automation_on_demand
+      - group.household
+      - group.interior_lights
+      - group.exterior_lights
+      - group.locks
+      - group.climate_control
+      - group.garage
+      - camera.front_porch
+      - camera.garage
       - group.travel_times
+      - group.todo
+  Automation On Demand:
+    control: hidden
+    entities:
+      - input_boolean.bedtime
+      - vacuum.roomba
+      - input_select.remote
+      - input_select.bedroom_remote
+      - input_select.sonos
+  Household:
+    - device_tracker.jarvis_zbayne
+    - device_tracker.jarvis_heather
+  Interior Lights:
+    - group.living_room_lights
+    - group.dining_room_lights
+    - group.bedroom_lights
+    - group.kitchen_lights
+    - group.stairs
+    - group.USER1_office_lights
+    - group.USER2_office_lights
+    - group.guest_bedroom_lights
+    - group.basement_lighting
+    - light.bathroom_vanity
+    - light.hallway_light
 
-  basement_view:
-    name: Basement
-    view: yes
+  Exterior Lights:
+    - group.front_porch
+    - group.back_door
+    - group.back_porch
+    - switch.front_yard_lighting
+    - group.backyard_lighting
+    - light.garage_light
+  Locks:
+    control: hidden
     entities:
-      - group.basement_lights_card
-      - group.basement_scenes_card
-      - media_player.basement
-  patio_view:
-    name: Patio
-    view: yes
-    entities:
-      - group.patio_card
-
-  security_view:
-    name: Security
-    view: yes
-    entities:
-
-  admin_view:
-    name: Admin
-    view: yes
-    entities:
-      - group.battery_card
-      - group.override_card
-
-  zbayne_card:
-    name: Zbayne Bedroom
-    entities:
-      - switch.ge_12722_onoff_relay_switch_switch_2
-      - camera.monitor1
-  master_card:
-    name: Master Bedroom
-    entities:
-      - switch.masterlights
-  hall_card:
-    name: Hall
-    entities:
-      - switch.halllights
-  bathroom_card:
-    name: Hall Bathroom
-    entities:
-      - switch.hallbathlights
+      - lock.front_door
+      - lock.back_door
+      - lock.basement_door
 
 
-  firstlights_card:
-    name: First Floor Lights
-    entities:
-      - light.hue_white_lamp_1
-      - light.hue_white_lamp_2
-      - light.hue_white_lamp_3
-      - switch.livingroomtalllight
-      - switch.livingroomcouchrightlight
-      - switch.livingroomcouchleftlight
-      - switch.Tree
-      - switch.porchlight
-      - switch.backporchlight
-      - switch.diningroomlights
-      - switch.kitchenlights
-      - switch.garagelights
-      - switch.patiodoor
-      - switch.frontdoor
-      - switch.backdoor
-      - switch.kitchenhalllights
-      - switch.bathroomlights
-      - switch.otherlight
-
-
-  basement_lights_card:
-    name: Basement Lights
-    entities:
-      - switch.ge_12722_onoff_relay_switch_switch
-      - switch.bar_lighting
-      - switch.lab_lighting_2
-      - switch.lab_lighting
-      - switch.neon1
-      - light.movie_lighting
-      - light.neon2
-      - light.hue_white_lamp_1
-      - light.hue_white_lamp_2
-      - light.hue_white_lamp_3
-      - light.porch_strip
-
-  basement_scenes_card:
-    name: Basement Scenes
-    entities:
-      - input_select.scene_movie
-  patio_card:
-    name: Patio
-    entities:
-      - switch.Patio_Lighting
-      - switch.patiodoor
-      - switch.Patio_Fountain
-      - switch.Patio_Music
-  battery_card:
-    name: Batteries
-    entities:
-      - binary_sensor.ecolink_doorwindow_sensor_sensor_2_0
-      - binary_sensor.__sensor_5_0
-      - binary_sensor.ecolink_unknown_type0004_id0001_sensor_5_0
   override_card:
     name: Overrides
     entities:
@@ -122,3 +68,23 @@
       - automation.turn_off_basement_lights_timer
   Travel Times:
       - sensor.zbayne_to_home
+  Todo:
+      - sensor.Feed_Dog
+
+  troubleshooting:
+    name: Troubleshooting
+    view: yes
+    icon: mdi:none
+    entities:2
+      - group.all_lights
+      - group.all_switches
+      - group.all_devices
+      - group.all_scripts
+      - group.all_automations
+      - group.battery_card
+  battery_card:
+    name: Batteries
+    entities:
+      - binary_sensor.ecolink_doorwindow_sensor_sensor_2_0
+      - binary_sensor.__sensor_5_0
+      - binary_sensor.ecolink_unknown_type0004_id0001_sensor_5_0
