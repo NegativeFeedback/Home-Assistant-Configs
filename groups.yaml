@@ -10,16 +10,8 @@
       - sensor.Feed_Dog
       - group.all_lights
       - group.all_switches
-  second_view:
-    name: Second Floor
-    view: yes
-    entities:
-      - group.zbayne_card
-  first_view:
-    name: First Floor
-    view: yes
-    entities:
-      - group.firstlights_card
+      - group.Travel_Times
+
   basement_view:
     name: Basement
     view: yes
@@ -54,14 +46,6 @@
     name: Master Bedroom
     entities:
       - switch.masterlights
-  alex_card:
-    name: Alex Bedroom
-    entities:
-      - switch.alexlights
-  lucas_card:
-    name: Lucas Bedroom
-    entities:
-      - switch.lucas
   hall_card:
     name: Hall
     entities:
@@ -136,3 +120,6 @@
       - automation.turn_on_laundry_light_when_there_is_movement
       - automation.turn_off_laundry_lights_timer_after_movement
       - automation.turn_off_basement_lights_timer
+  Travel Times:
+  entities:
+      - sensor.zbayne_to_home
