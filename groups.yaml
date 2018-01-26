@@ -10,7 +10,7 @@
       - sensor.Feed_Dog
       - group.all_lights
       - group.all_switches
-      - group.Travel_Times
+      - group.travel_times
 
   basement_view:
     name: Basement
@@ -121,5 +121,4 @@
       - automation.turn_off_laundry_lights_timer_after_movement
       - automation.turn_off_basement_lights_timer
   Travel Times:
-  entities:
       - sensor.zbayne_to_home
