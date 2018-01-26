@@ -40,7 +40,7 @@
     - group.guest_bedroom_lights
     - group.basement_lighting
     - light.bathroom_vanity
-    - light.hallway_light
+    - switch.hallway_light
 
   Exterior Lights:
     - group.front_porch
@@ -48,7 +48,7 @@
     - group.back_porch
     - switch.front_yard_lighting
     - group.backyard_lighting
-    - light.garage_light
+    - switch.garage_light
   Locks:
     control: hidden
     entities:

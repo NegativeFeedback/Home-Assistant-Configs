@@ -62,18 +62,18 @@
     retain: true
 
   - platform: mqtt
-    name: "livingroomcouchleftlight"
-    state_topic: "stat/livingroomcouchleftlight/POWER"
-    command_topic: "cmnd/livingroomcouchleftlight/POWER"
+    name: "garage light"
+    state_topic: "stat/garage_light/POWER"
+    command_topic: "cmnd/garage_light/POWER"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
     retain: true
 
   - platform: mqtt
-    name: "fronthalllight"
-    state_topic: "stat/fronthalllight/POWER"
-    command_topic: "cmnd/fronthalllight/POWER"
+    name: "hallway light"
+    state_topic: "stat/hallway_light/POWER"
+    command_topic: "cmnd/hallway_light/POWER"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
