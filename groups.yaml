@@ -14,15 +14,15 @@
       - group.locks
       - group.climate_control
       - group.garage
-      - camera.front_porch
-      - camera.garage
+      - camera.monitor1 
+      - camera.monitor2
       - group.travel_times
       - group.todo
   Automation On Demand:
     control: hidden
     entities:
-      - input_boolean.bedtime
-      - vacuum.roomba
+#      - input_boolean.bedtime
+#      - vacuum.roomba
       - input_select.remote
       - input_select.bedroom_remote
       - input_select.sonos
@@ -75,7 +75,7 @@
     name: Troubleshooting
     view: yes
     icon: mdi:none
-    entities:2
+    entities:
       - group.all_lights
       - group.all_switches
       - group.all_devices
