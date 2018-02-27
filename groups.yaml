@@ -14,21 +14,454 @@
       - group.locks
       - group.climate_control
       - group.garage
-      - camera.monitor1 
       - camera.monitor2
+      - camera.monitor1
+      - camera.monitor1
+      - group.all_switches
+      - group.all_lights
+      - group.all_devices
+      - group.all_scripts
+      - group.all_automations
+
+
+
+
+  living:
+    name: Living
+    view: yes
+    icon: mdi:sofa
+    entities:
+      - group.living_room
+      - group.remote
+      - media_player.living_room_sonos
+      - media_player.living_room_roku
+
+  dining:
+    name: Dining
+    view: yes
+    icon: mdi:silverware-variant
+    entities:
+      - group.kitchen
+      - group.dining_room
+      - media_player.sonos_dining_room
+      - media_player.sonos_kitchen
+
+  bedrooms:
+    name: Bedrooms
+    view: yes
+    icon: mdi:hotel
+    entities:
+      - group.bedroom
+      - group.guest_bedroom
+      - media_player.bedroom_apple_tv
+      - media_player.sonos_bedroom
+      - media_player.guest_bedroom_apple_tv
+
+  bathrooms:
+    name: Bathrooms
+    view: yes
+    icon: mdi:water-pump
+    entities:
+      - group.bathroom
+      - media_player.sonos_bathroom
+
+  offices:
+    name: Offices
+    view: yes
+    icon: mdi:desktop-mac
+    entities:
+      - group.USER1_office
+      - group.USER2_office
+      - media_player.USER1s_office_apple_tv
+      - media_player.plex_for_vizio_vizio_mtk
+      - media_player.sonos_USER1s_office
+      - media_player.sonos_USER2s_office
+
+  basements:
+    name: Basement
+    view: yes
+    icon: mdi:stairs
+    entities:
+      - group.basement
+      - group.water_sensors
+      - media_player.sonos_basement
+      - media_player.roku_hd__REDACTED
+
+  outdoors:
+    name: Outdoors
+    view: yes
+    icon: mdi:tree
+    entities:
+      - group.exterior_lights
+      - group.door_bell
+      - group.garage
+      - camera.front_porch
+      - camera.garage
+      - camera.garage_interior
+      - camera.ring_front_door
+      - media_player.sonos_backyard_patio
+
+  weatherdashboard:
+    name: Weather
+    view: yes
+    icon: mdi:weather-partlycloudy
+    entities:
+      - group.thermostat
+      - group.indoor_temperature
+      - group.humidity
+      - group.weather
+      - group.weather_summary
+      - camera.mo_weather_radar
+
+  media:
+    name: Media
+    view: yes
+    icon: mdi:play-circle-outline
+    entities:
+      - group.remote
+      - group.music
+      - group.media_player
+      - group.sonos
+
+  cameras:
+    name: Cameras
+    view: yes
+    icon: mdi:camera
+    entities:
+      - camera.front_porch
+      - camera.garage
+      - camera.garage_interior
+      - camera.ring_front_door
+
+  automation:
+    name: Automation
+    view: yes
+    icon: mdi:robot
+    entities:
+      - group.automation_on_demand
+      - group.holiday_modes
+      - group.party_modes
+      - group.alarm
+      - group.door_locks
+      - group.location_controls
+      - group.automation_override
+
+  sensors:
+    name: Sensors
+    view: yes
+    icon: mdi:gauge
+    entities:
+      - group.household
+      - group.device_location
+      - group.friends_and_family
+      - group.occupancy
+      - group.doors
+      - group.door_bell
+      - group.water_sensors
+      - group.battery_levels
+      - group.dns
+      - group.nas
+      - group.system
+
+  auto:
+    name: Auto
+    view: yes
+    icon: mdi:car
+    entities:
+      - group.garage
+      - group.garage_outlets
+      - camera.garage
+      - camera.garage_interior
       - group.travel_times
-      - group.todo
+      - group.traffic_camera_feeds
+      - camera.REDACTED
+
+  troubleshooting:
+    name: Troubleshooting
+    view: yes
+    icon: mdi:none
+    entities:
+      - group.overnight_guests
+      - group.input_boolean
+      - group.plex
+      - group.all_automations
+#      - group.all_scripts
+#      - group.calendars
+#      - group.scenes
+
+  Traffic Camera Feeds:
+    - weblink.REDACTED
+    - weblink.REDACTED
+    - weblink.REDACTED
+    - weblink.REDACTED
+    - weblink.REDACTED
+    - weblink.REDACTED
+    - weblink.REDACTED
+    - weblink.REDACTED
+
+  Automation Override:
+    control: hidden
+    entities:
+      - input_boolean.disable_voice_greeting
+      - input_boolean.disable_doorbell
+      - input_boolean.disable_door_open_lights_on
+      - input_boolean.disable_exterior_on_sunset
+      - input_boolean.disable_exterior_off_night
+      - input_boolean.disable_auto_garage
+      - input_boolean.disable_home_away
+      - input_boolean.disable_interior_lights_sunset
+      - input_boolean.disable_lights_morning
+      - input_boolean.disable_lock_unlock_doors
+      - input_boolean.disable_media_lights
+      - input_boolean.disable_occupancy
+      - input_boolean.disable_rainy_day
+      - input_boolean.disable_water_sensors
+
+  Location Controls:
+    control: hidden
+    entities:
+      - input_boolean.USER1_away
+      - input_boolean.USER1_away_driving
+      - input_boolean.USER2_away
+      - input_boolean.USER2_away_driving
+      - input_boolean.USER1_home
+      - input_boolean.USER2_home
+      - input_boolean.manual_USER1_away
+      - input_boolean.manual_USER2_away
+      - input_boolean.house_guest_away
+      - input_boolean.vacation_mode
+      - input_boolean.guest_mode
+
   Automation On Demand:
     control: hidden
     entities:
-#      - input_boolean.bedtime
-#      - vacuum.roomba
+      - input_boolean.bedtime
+      - vacuum.roomba
       - input_select.remote
       - input_select.bedroom_remote
       - input_select.sonos
+
   Household:
-    - device_tracker.jarvis_zbayne
-    - device_tracker.jarvis_heather
+    - device_tracker.USER1DEVICE
+    - device_tracker.USER2DEVICE
+  #  - group.house_guest
+
+  House Guest:
+  #  - device_tracker.REDACTED
+  #  - device_tracker.REDACTED
+  #  - device_tracker.REDACTED
+  #  - device_tracker.REDACTED
+  #  - device_tracker.REDACTED
+  #  - device_tracker.REDACTED
+
+  Device Location:
+    - device_tracker.USER1sipad
+    - device_tracker.USER2sipad
+    - device_tracker.asuemann0617mac
+    - device_tracker.USER1smacbookair
+    - device_tracker.USER2smacbookair
+
+  Friends and Family:
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTEDiphone
+    - device_tracker.REDACTEDiphone
+
+  Overnight Guests:
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+    - device_tracker.REDACTED
+
+  Party Modes:
+    control: hidden
+    entities:
+      - input_boolean.livingroom_rainbow
+      - input_boolean.office_rainbow
+      - input_boolean.front_porch_rainbow
+
+  Holiday Modes:
+    control: hidden
+    entities:
+      - sensor.holidays_calendar
+      - input_select.holiday
+      - input_boolean.interior_holiday
+
+  Living Room:
+    control: hidden
+    entities:
+      - group.living_room_lamps
+      - light.media_center_lighting
+      - switch.fireplace
+      - switch.living_room_ceiling_fan
+      - lock.front
+      - binary_sensor.front_door_opened
+      - binary_sensor.living_room_occupancy
+      - sensor.living_room_temperature
+
+  Living Room Lamps:
+    - light.living_room_lamp_1
+    - light.living_room_lamp_2
+
+  Living Room Lights:
+    - group.living_room_lamps
+    - light.media_center_lighting
+
+  Bedroom:
+    control: hidden
+    entities:
+      - light.USER1s_nightstand
+      - light.USER2s_nightstand
+      - light.bedroom_lamp
+      - light.closet_lamp
+      - binary_sensor.bedroom_occupancy
+      - sensor.bedroom_temperature
+
+  Bedroom Lights:
+    - light.USER1s_nightstand
+    - light.USER2s_nightstand
+    - light.bedroom_lamp
+    - light.closet_lamp
+
+  Kitchen:
+    control: hidden
+    entities:
+      - light.kitchen_ceiling
+      - light.kitchen_cabinets
+      - light.kitchen_sink
+      - lock.back_door
+      - binary_sensor.back_door_opened
+      - binary_sensor.kitchen_occupancy
+      - sensor.kitchen_temperature
+
+  Kitchen Lights:
+    - light.kitchen_ceiling
+    - light.kitchen_cabinets
+    - light.kitchen_sink
+
+  Bathroom:
+    control: hidden
+    entities:
+      - light.bathroom_vanity
+      - binary_sensor.bathroom_occupancy
+      - sensor.bathroom_temperature
+
+  USER1 Office:
+    control: hidden
+    entities:
+      - light.office_ceiling
+      - light.office_lamp
+      - switch.air_purifier
+      - switch.office_fan
+      - binary_sensor.office_occupancy
+      - sensor.office_temperature
+
+  USER1 Office Lights:
+    - light.office_ceiling
+    - light.office_lamp
+
+  USER2 Office:
+    control: hidden
+    entities:
+      - group.USER2_office_ceiling
+      - binary_sensor.USER2_office_occupancy
+      - sensor.USER2_office_temperature
+
+  USER2 Office Lights:
+    - group.USER2_office_ceiling
+
+  Stairs:
+    - light.stairs_1
+    - light.stairs_2
+    - light.stairs_3
+
+  Door Bell:
+    - binary_sensor.ring_front_door_ding
+    - binary_sensor.ring_front_door_motion
+
+  Back Porch:
+    - light.upper_patio_left
+    - light.upper_patio_right
+
+  Basement:
+    control: hidden
+    entities:
+      - light.basement_stairs
+      - group.basement_lights
+      - switch.basement_heater
+      - lock.basement_door
+      - binary_sensor.basement_door_opened
+      - binary_sensor.basement_occupancy
+      - binary_sensor.laundry_room_occupancy
+      - sensor.basement_temperature
+      - sensor.laundry_room_temperature
+
+  Basement Lighting:
+    - light.basement_stairs
+    - group.basement_lights
+
+  Basement Lights:
+    - light.basement_light_1
+    - light.basement_light_2
+    - light.basement_light_3
+    - light.basement_light_4
+
+  Dining Room:
+    control: hidden
+    entities:
+      - light.dining_room_table
+      - light.dining_room_ceiling
+      - binary_sensor.main_floor_occupancy
+      - sensor.main_floor_temperature
+
+  Dining Room Lights:
+    - light.dining_room_table
+    - light.dining_room_ceiling
+
+  Guest Bedroom:
+    control: hidden
+    entities:
+      - light.guest_bedroom_lamp
+      - light.guest_bedroom_nightstand
+      - binary_sensor.guest_bedroom_occupancy
+      - sensor.guest_bedroom_temperature
+
+  Guest Bedroom Lights:
+    - light.guest_bedroom_lamp
+    - light.guest_bedroom_nightstand
+
+  Garage:
+    control: hidden
+    entities:
+      - light.garage_light
+      - cover.garage_door
+
+  Backyard Lighting:
+    - switch.backyard_patio_lighting
+    - switch.lower_backyard_lighting
+
+  Interior:
+    control: hidden
+    entities:
+      - light.hallway_light
+      - group.stairs
+
   Interior Lights:
     - group.living_room_lights
     - group.dining_room_lights
@@ -40,15 +473,105 @@
     - group.guest_bedroom_lights
     - group.basement_lighting
     - light.bathroom_vanity
-    - switch.hallway_light
+    - light.hallway_light
 
   Exterior Lights:
-    - group.front_porch
-    - group.back_door
-    - group.back_porch
+    - switch.porch_light_switch
+    - switch.ge_12722_onoff_relay_switch_switch
     - switch.front_yard_lighting
     - group.backyard_lighting
-    - switch.garage_light
+    - switch.garage_lights_switch
+
+  Alarm:
+    control: hidden
+    entities:
+      - input_boolean.enable_security
+      - automation.security__motion_alarm
+      - automation.security__door_alarm
+      - input_boolean.panic_mode
+      - input_boolean.alarm_tripped
+      - wink.siren
+
+  Thermostat:
+    control: hidden
+    entities:
+      - climate.main_floor
+      - climate.window_unit
+      - climate.basement_heater
+      - switch.basement_heater
+      - sensor.dark_sky_temperature
+      - input_boolean.thermostat_away
+      - switch.hallway_fan
+      - group.summer_mode
+      - group.winter_mode
+
+  Climate Control:
+    control: hidden
+    entities:
+      - climate.main_floor
+      - climate.window_unit
+      - climate.basement_heater
+
+  Summer Mode:
+    - automation.climate__turn_on_summer
+    - automation.climate__turn_off_summer
+
+  Winter Mode:
+    - automation.climate__turn_on_winter
+    - automation.climate__turn_off_winter
+
+  Media Player:
+    - sensor.REDACTED
+    - media_player.living_room_apple_tv
+    - media_player.bedroom_apple_tv
+    - media_player.USER1s_office_apple_tv
+    - media_player.guest_bedroom_apple_tv
+    - media_player.plex_plex_for_vizio_vizio_mtk
+    - media_player.plex_USER1s_iphone
+    - media_player.plex_USER1s_ipad
+    - media_player.roku_hd__REDACTED
+
+  Sonos:
+    - media_player.sonos_media_center
+    - media_player.sonos_living_room
+    - media_player.sonos_dining_room
+    - media_player.sonos_kitchen
+    - media_player.sonos_bathroom
+    - media_player.sonos_bedroom
+    - media_player.sonos_USER1s_office
+    - media_player.sonos_USER2s_office
+    - media_player.sonos_basement
+    - media_player.sonos_backyard_patio
+
+  Plex:
+    - media_player.plex_living_room
+    - media_player.plex_bedroom
+    - media_player.plex_office
+    - media_player.plex_guest_bedroom
+
+  Remote:
+    control: hidden
+    entities:
+      - input_select.remote
+      - input_select.bedroom_remote
+      - input_select.sonos
+      - input_boolean.group_all_sonos
+
+  Water Sensors:
+    control: hidden
+    entities:
+      - binary_sensor.basement_drain_water_sensor_liquid_detected
+      - binary_sensor.sump_pump_water_sensor_liquid_detected
+
+  Door Locks:
+    control: hidden
+    entities:
+      - input_boolean.lock_doors
+      - input_boolean.unlock_doors
+      - lock.front
+      - lock.back_door
+      - lock.basement_door
+
   Locks:
     control: hidden
     entities:
@@ -56,35 +579,205 @@
       - lock.back_door
       - lock.basement_door
 
+  USER1 Door Codes:
+    - binary_sensor.USER1_front_door_code
+    - binary_sensor.USER1_back_door_code
+    - binary_sensor.USER1_basement_door_code
 
-  override_card:
-    name: Overrides
-    entities:
-      - input_boolean.party_mode
-      - input_boolean.disable_basement_timer
-      - input_boolean.disable_patio_timer
-      - automation.turn_on_laundry_light_when_there_is_movement
-      - automation.turn_off_laundry_lights_timer_after_movement
-      - automation.turn_off_basement_lights_timer
+  USER2 Door Codes:
+    - binary_sensor.USER2_front_door_code
+    - binary_sensor.USER2_back_door_code
+    - binary_sensor.USER2_basement_door_code
+
+  Door Codes:
+    - binary_sensor.USER1_front_door_code
+    - binary_sensor.USER1_back_door_code
+    - binary_sensor.USER1_basement_door_code
+    - binary_sensor.USER2_front_door_code
+    - binary_sensor.USER2_back_door_code
+    - binary_sensor.USER2_basement_door_code
+
+  Occupancy:
+    - binary_sensor.living_room_occupancy
+    - binary_sensor.main_floor_occupancy
+    - binary_sensor.kitchen_occupancy
+    - binary_sensor.bedroom_occupancy
+    - binary_sensor.bathroom_occupancy
+    - binary_sensor.office_occupancy
+    - binary_sensor.USER2_office_occupancy
+    - binary_sensor.guest_bedroom_occupancy
+    - binary_sensor.basement_occupancy
+    - binary_sensor.laundry_room_occupancy
+
+  Basement Occupancy:
+    - binary_sensor.basement_occupancy
+    - binary_sensor.laundry_room_occupancy
+
+  Indoor Temperature:
+    - sensor.living_room_temperature
+    - sensor.main_floor_temperature
+    - sensor.kitchen_temperature
+    - sensor.bedroom_temperature
+    - sensor.bathroom_temperature
+    - sensor.office_temperature
+    - sensor.USER2_office_temperature
+    - sensor.guest_bedroom_temperature
+    - sensor.basement_temperature
+    - sensor.laundry_room_temperature
+
+  Humidity:
+    - sensor.main_floor_humidity
+    - sensor.wink_relay_sensor_humidity
+    - sensor.dark_sky_humidity
+
+  Weather:
+    - sun.sun
+    - sensor.moon
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_apparent_temperature
+    - sensor.dark_sky_humidity
+    - sensor.dark_sky_cloud_coverage
+    - sensor.dark_sky_precip
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_precip_intensity
+    - sensor.dark_sky_nearest_storm_distance
+#    - sensor.weather_nearest_storm_bearing
+    - sensor.dark_sky_wind_speed
+    - sensor.dark_sky_wind_bearing
+    - sensor.dark_sky_visibility
+    - sensor.dark_sky_ozone
+    - sensor.dark_sky_pressure
+    - sensor.dark_sky_dew_point
+
+  Weather Summary:
+    - sensor.dark_sky_summary
+    - sensor.dark_sky_minutely_summary
+    - sensor.dark_sky_hourly_summary
+    - sensor.dark_sky_daily_summary
+
+  USER2 Office Ceiling:
+    - light.USER2s_office_ceiling_1
+    - light.USER2s_office_ceiling_2
+
+  Doors:
+    - binary_sensor.front_door_opened
+    - binary_sensor.back_door_opened
+    - binary_sensor.basement_door_opened
+
   Travel Times:
-      - sensor.zbayne_to_home
-  Todo:
-      - sensor.Feed_Dog
+    - sensor.USER1_to_home
+    - sensor.USER2_to_home
+    - sensor.USER2_to_REDACTED
+    - sensor.USER2_to_REDACTED
+    - sensor.USER2_to_REDACTED
 
-  troubleshooting:
-    name: Troubleshooting
-    view: yes
-    icon: mdi:none
-    entities:
-      - group.all_lights
-      - group.all_switches
-      - group.all_devices
-      - group.all_scripts
-      - group.all_automations
-      - group.battery_card
-  battery_card:
-    name: Batteries
-    entities:
-      - binary_sensor.ecolink_doorwindow_sensor_sensor_2_0
-      - binary_sensor.__sensor_5_0
-      - binary_sensor.ecolink_unknown_type0004_id0001_sensor_5_0
+  System:
+    - sensor.uptime
+    - binary_sensor.wink_hub
+    - binary_sensor.wink_relay
+    - updater.updater
+
+  NAS:
+    - sensor.nas_status
+    - sensor.nas_cpu_usage
+    - sensor.nas_memory_usage
+    - sensor.nas_smart_status_drive_01
+    - sensor.nas_smart_status_drive_02
+    - sensor.nas_smart_status_drive_03
+    - sensor.nas_smart_status_drive_04
+    - sensor.nas_volume_used_storage
+    - sensor.nas_volume_used_backup
+    - sensor.nas_system_temperature
+
+  Battery Levels:
+    - sensor.roomba_batt
+    - sensor.ring_front_door_battery
+    - sensor.front_door_lock_batt
+    - sensor.back_door_lock_batt
+    - sensor.basement_door_lock_batt
+    - sensor.siren_batt
+    - sensor.front_door_sensor_batt
+    - sensor.back_door_sensor_batt
+    - sensor.basement_door_sensor_batt
+    - sensor.basement_drain_water_sensor_batt
+    - sensor.sump_pump_water_sensor_batt
+
+  DNS:
+    - sensor.pihole_ads_blocked_today
+    - sensor.pihole_ads_blocked_today_2
+    - sensor.pihole_ads_percentage_blocked_today
+    - sensor.pihole_ads_percentage_blocked_today_2
+
+  Garage Outlets:
+    - switch.myq_garage_outlet
+
+  Hue lights:
+    - light.USER1s_nightstand
+    - light.basement_light_1
+    - light.basement_light_2
+    - light.basement_light_3
+    - light.basement_light_4
+    - light.basement_stairs
+    - light.bedroom_lamp
+    - light.closet_lamp
+    - light.hallway_light
+    - light.living_room_lamp_1
+    - light.living_room_lamp_2
+    - light.office_lamp
+    - light.USER2s_nightstand
+    - light.USER2s_office_ceiling_1
+    - light.USER2s_office_ceiling_2
+    - light.stairs_1
+    - light.stairs_2
+    - light.stairs_3
+    - light.guest_bedroom_lamp
+    - light.guest_bedroom_nightstand
+    - light.media_center_lighting
+
+  Hue Lights Exterior:
+    - light.back_door_left
+    - light.back_door_right
+    - light.front_porch_left
+    - light.front_porch_right
+    - light.upper_patio_left
+    - light.upper_patio_right
+
+  Wink Lights:
+    - light.dining_room_ceiling
+    - light.dining_room_table
+    - light.kitchen_cabinets
+    - light.kitchen_ceiling
+    - light.kitchen_sink
+    - light.office_ceiling
+    - light.bathroom_vanity
+
+  Wink Lights Exterior:
+    - light.garge_light
+
+  Input Boolean:
+    - input_boolean.USER1_greeting
+    - input_boolean.REDACTED_visiting
+    - input_boolean.garage_door
+    - input_boolean.REDACTED_visiting
+    - input_boolean.REDACTED_visiting
+    - input_boolean.REDACTED_visiting
+    - input_boolean.REDACTED_visiting
+    - input_boolean.USER2_greeting
+    - input_boolean.USER2_working
+    - input_boolean.REDACTED_visiting
+    - input_boolean.REDACTED_visiting
+    - input_boolean.watching_plex
+    - input_boolean.bedroom_tv
+
+  Calendars:
+    - calendar.holidays_in_united_states
+    - calendar.personal
+    - calendar.REDACTED
+    - calendar.work
+    - sensor.USER2_work_offset
+
+  Scenes:
+    - scene.security
+    - scene.vacation
+    - scene.vacation_disable_automation
+    - scene.vacation_enable_automation

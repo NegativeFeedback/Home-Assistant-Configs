@@ -42,24 +42,24 @@
     entity_id: input_boolean.party_mode
     state: 'off'
 - id: laundrymovement
-  alias: Laundry Light movement
+  alias: Garage Motion Light
   initial_state: true
   hide_entity: false
   trigger:
-  - entity_id: binary_sensor.ecolink_unknown_type0004_id0001_sensor
+  - entity_id: binary_sensor.motion_sensor_sensor
     platform: state
     to: 'on'
   action:
   - data:
       entity_id:
-      - switch.ge_12722_onoff_relay_switch_switch
-    service: homeassistant.turn_on
+      - switch.zbayne_switch
+    service: switch.turn_on
 - id: laundrylightstimer
-  alias: Turn laundry Light off after 5 min
+  alias: Turn garage Light off after 5 min
   initial_state: true
   hide_entity: false
   trigger:
-  - entity_id: binary_sensor.ecolink_unknown_type0004_id0001_sensor
+  - entity_id: binary_sensor.motion_sensor_sensor
     for:
       minutes: 1
     platform: state
@@ -67,22 +67,22 @@
   action:
   - data:
       entity_id:
-      - switch.ge_12722_onoff_relay_switch_switch
+      - switch.zbayne_switch
     service: homeassistant.turn_off
 - id: notificationtest1
   alias: Notification Text - Test
   trigger:
-    - platform: state
-      entity_id: sensor.feed_dog
-      from: 'OFF'
-      to: 'ON'
+  - platform: state
+    entity_id: sensor.feed_dog
+    from: 'OFF'
+    to: 'ON'
   action:
-    - service: notify.zbayne
-      data:
-        title: "Home Assistant"
-        message: "This is a test."
-    - service: homeassistant.turn_off
-      entity_id: input_boolean.test_text_notification
+  - service: notify.zbayne
+    data:
+      title: Home Assistant
+      message: This is a test.
+  - service: homeassistant.turn_off
+    entity_id: input_boolean.test_text_notification
 - id: resetfeeddogsensor
   alias: Reset Feed Dog Sensor
   initial_state: true
@@ -95,3 +95,42 @@
       entity_id:
       - binary_sensor.feed_dog
     service: homeassistant.turn_off
+- action:
+  - data:
+      entity_id:
+      - switch.garage_lights_switch
+    service: homeassistant.turn_on
+  alias: Turn Outside Lights on
+  condition: []
+  id: '1519077759518'
+  trigger:
+  - event: sunset
+    platform: sun
+- action:
+  - data:
+      entity_id:
+      - switch.garage_lights_switch
+    service: switch.turn_off
+  alias: Turn outside light off
+  condition: []
+  id: '1519171921655'
+  trigger:
+  - event: sunrise
+    offset: -01:00:00
+    platform: sun
+- action:
+  - data:
+      entity_id:
+      - switch.porch_light_switch
+    service: switch.turn_on
+  alias: Doors - Turn on Front Porch when Front Opens
+  condition:
+  - condition: state
+    entity_id: sun.sun
+    state: below_horizon
+  id: '1519417509328'
+  trigger:
+  - entity_id: lock.front_locked
+    from: locked
+    platform: state
+    to: unlocked
