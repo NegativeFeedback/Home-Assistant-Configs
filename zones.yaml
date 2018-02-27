@@ -5,7 +5,6 @@
 #REDACTED
   - name: work
     latitude: !secret zwork_latitude
-    longitude: !secret zwork_latitude
+    longitude: !secret zwork_longitude
     radius: 300
     icon: mdi:briefcase
-
