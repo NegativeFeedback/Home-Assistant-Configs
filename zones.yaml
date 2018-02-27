@@ -2,15 +2,10 @@
 ## Zones
 #################################################################
 
-#REDACTED38.672170, -90.438556
+#REDACTED
   - name: work
-    latitude: 39.672170
-    longitude: -91.438556
-    radius: 300
-    icon: mdi:hospital
-#REDACTED Office
-  - name: work
-    latitude: 38.672170
-    longitude: -90.438556
+    latitude: !secret zwork_latitude
+    longitude: !secret zwork_latitude
     radius: 300
     icon: mdi:briefcase
+
