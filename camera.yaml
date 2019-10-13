@@ -1,0 +1,9 @@
+  - platform: mjpeg
+    name: Driveway
+    mjpeg_url: http://iris:81/mjpg/driveway?user=jarvis&pw=jarvisjarvis
+  - platform: mjpeg
+    name: Porch
+    mjpeg_url: http://iris:81/mjpg/porch?user=jarvis&pw=jarvisjarvis
+  - platform: ffmpeg
+    name: test
+    input: rtmp://168.166.124.201:1935/rtplive/MODOT_CAM_083

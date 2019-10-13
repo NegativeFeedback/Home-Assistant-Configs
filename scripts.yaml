@@ -1,0 +1,63 @@
+'1522701113499':
+  alias: Git updates
+  sequence:
+  - data: {}
+    service: shell_command.update_new_commits_sensor
+'1533622368367':
+  alias: guest_lock_code
+  sequence:
+  - service: input_number.set_value
+    data_template:
+      entity_id: input_number.guest_code
+      value: '{{ states.sensor.first_set.state | int }}{{ states.sensor.second_set.state
+        | int }}{{ states.sensor.third_set.state | int }}'
+  - service: lock.set_usercode
+    data_template:
+      node_id: 29
+      code_slot: 10
+      usercode: '{{ states.input_number.guest_code.state | int }}'
+  - service: notify.zbayne
+    data_template:
+      message: "*New Guest User Code Generated* \n The new code for the week is: {{\
+        \ states.input_number.guest_code.state | int }}"
+'1633622368367':
+  alias: guest_lock_code_test
+  sequence:
+  - service: input_number.set_value
+    data_template:
+      entity_id: input_number.guest_code
+      value: '{{ states.sensor.first_set.state | int }}{{ states.sensor.second_set.state
+        | int }}{{ states.sensor.third_set.state | int }}'
+  - service: lock.set_usercode
+    data_template:
+      node_id: 25
+      code_slot: 10
+      usercode: '{{ states.input_number.guest_code.state | int }}'
+  - service: notify.zbayne
+    data_template:
+      message: "*test New Guest User Code Generated* \n The new code for the week\
+        \ is: {{ states.input_number.guest_code.state | int }}"
+input_select_harmony:
+  alias: "Start Remote activity from input select"
+  sequence:
+      service: remote.turn_on
+      data_template:
+        entity_id: remote.media_center
+        activity: >
+          {% if is_state("input_select.remote", "PowerOff") %}
+              -1
+          {% elif is_state("input_select.remote", "Watch TV") %}
+              33091694
+          {% elif is_state("input_select.remote", "Watch Over the Air TV") %}
+              22109519
+          {% elif is_state("input_select.remote", "Play Xbox One") %}
+              22107236
+          {% elif is_state("input_select.remote", "Play Nintendo Switch") %}
+              23666878
+          {% elif is_state("input_select.remote", "Play Wii U") %}
+              22107302
+          {% elif is_state("input_select.remote", "Play Sonos") %}
+              22815026
+          {% elif is_state("input_select.remote", "Turn on Receiver") %}
+              22107111
+          {% endif %}

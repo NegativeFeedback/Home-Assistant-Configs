@@ -1,0 +1,472 @@
+title: Home Assistant
+views:
+  - cards:
+      - entities:
+          - entity: input_boolean.bedtime
+          - entity: vacuum.roomba
+          - entity: input_select.remote
+          - entity: input_select.bedroom_remote
+          - entity: input_select.sonos
+          - entity: light.node8
+          - entity: switch.node4
+        title: Automation On Demand
+        type: entities
+      - entities:
+          - device_tracker.zbayne_zbayne
+          - device_tracker.hgerard_hgerard
+          - climate.home
+        title: Household
+        type: entities
+      - entities:
+          - group.kitchen_lights
+          - group.basement_lights
+        title: Interior Lights
+        type: entities
+      - entities:
+          - input_boolean.lock_doors
+          - input_boolean.unlock_doors
+          - lock.assa_abloy_yale_push_button_deadbolt_yrd110_locked
+          - sensor.template_garage_door_status
+          - lock.assa_abloy_yale_key_free_touchscreen_deadbolt_yrd446_locked
+          - sensor.template_front_door_status
+        title: Locks
+        type: entities
+      - entities:
+          - switch.node23
+          - cover.garagedoor
+        title: Garage
+        type: entities
+      - entity: alarm_control_panel.house
+        type: alarm-panel
+      - entity: camera.test
+        title: Camera
+        show_state: false
+        camera_view: live
+        type: picture-entity
+    badges:
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+    icon: 'mdi:home'
+    path: default_view
+    title: Home
+  - badges: []
+    cards:
+      - entities:
+          - lock.assa_abloy_yale_key_free_touchscreen_deadbolt_yrd446_locked
+          - sensor.frontdoor_lock_battery
+          - binary_sensor.living_room_occupancy
+          - sensor.living_room_temperature
+        title: Living Room
+        type: entities
+      - entity: alarm_control_panel.house
+        type: alarm-panel
+      - entities:
+          - input_select.remote
+          - input_select.bedroom_remote
+          - input_select.sonos
+          - input_boolean.group_all_sonos
+        title: Remote
+        type: entities
+    icon: 'mdi:sofa'
+    path: living
+    title: Living
+  - badges: []
+    cards:
+      - entities:
+          - light.zooz_unknown_typeb112_id261c_level_4
+          - binary_sensor.bedroom_occupancy
+          - sensor.bedroom_temperature
+        title: master
+        type: entities
+      - entities:
+          - light.guest_bedroom_lamp
+          - light.guest_bedroom_nightstand
+          - binary_sensor.guest_bedroom_occupancy
+          - sensor.guest_bedroom_temperature
+        title: Guest Bedroom
+        type: entities
+    icon: 'mdi:hotel'
+    path: bedrooms
+    title: Bedrooms
+  - badges: []
+    cards: []
+    icon: 'mdi:water-pump'
+    path: bathrooms
+    title: Bathrooms
+  - badges: []
+    cards:
+      - entities:
+          - light.node2
+          - binary_sensor.office_occupancy
+          - sensor.office_temperature
+        title: Office
+        type: entities
+    icon: 'mdi:desktop-mac'
+    path: offices
+    title: Offices
+  - badges: []
+    cards:
+      - entities:
+          - cover.garagedoor
+          - group.exterior_lights
+        title: Cover
+        type: entities
+    icon: 'mdi:tree'
+    path: outdoors
+    title: Outdoors
+  - badges: []
+    cards:
+      - entities:
+          - switch.basement_heater
+          - sensor.dark_sky_temperature
+          - input_boolean.thermostat_away
+          - switch.hallway_fan
+          - group.summer_mode
+          - group.winter_mode
+        title: Thermostat
+        type: entities
+      - entity: climate.main_floor
+        type: thermostat
+      - entity: climate.window_unit
+        type: thermostat
+      - entity: climate.basement_heater
+        type: thermostat
+      - entities:
+          - automation.climate__turn_on_summer
+          - automation.climate__turn_off_summer
+        title: Summer Mode
+        type: entities
+      - entities:
+          - automation.climate__turn_on_winter
+          - automation.climate__turn_off_winter
+        title: Winter Mode
+        type: entities
+      - entities:
+          - sensor.living_room_temperature
+          - sensor.main_floor_temperature
+          - sensor.kitchen_temperature
+          - sensor.bedroom_temperature
+          - sensor.bathroom_temperature
+          - sensor.office_temperature
+          - sensor.user2_office_temperature
+          - sensor.guest_bedroom_temperature
+          - sensor.basement_temperature
+          - sensor.laundry_room_temperature
+        title: Indoor Temperature
+        type: entities
+      - entities:
+          - sensor.main_floor_humidity
+          - sensor.wink_relay_sensor_humidity
+          - sensor.dark_sky_humidity
+        title: Humidity
+        type: entities
+      - entities:
+          - sun.sun
+          - sensor.moon
+          - sensor.dark_sky_temperature
+          - sensor.dark_sky_apparent_temperature
+          - sensor.dark_sky_humidity
+          - sensor.dark_sky_cloud_coverage
+          - sensor.dark_sky_precip
+          - sensor.dark_sky_precip_probability
+          - sensor.dark_sky_precip_intensity
+          - sensor.dark_sky_nearest_storm_distance
+          - sensor.dark_sky_wind_speed
+          - sensor.dark_sky_wind_bearing
+          - sensor.dark_sky_visibility
+          - sensor.dark_sky_ozone
+          - sensor.dark_sky_pressure
+          - sensor.dark_sky_dew_point
+        title: Weather
+        type: entities
+      - entities:
+          - sensor.dark_sky_summary
+          - sensor.dark_sky_minutely_summary
+          - sensor.dark_sky_hourly_summary
+          - sensor.dark_sky_daily_summary
+        title: Weather Summary
+        type: entities
+    icon: 'mdi:weather-partlycloudy'
+    path: weatherdashboard
+    title: Weather
+  - badges: []
+    cards:
+      - entities:
+          - input_select.remote
+          - input_select.bedroom_remote
+          - input_select.sonos
+          - input_boolean.group_all_sonos
+        title: Remote
+        type: entities
+      - entities:
+          - input_boolean.group_all_sonos
+          - input_boolean.group_ungroup_sonos
+          - input_boolean.group_livingroom_sonos
+          - input_boolean.group_kitchen_sonos
+          - input_boolean.group_livingroomplaybar_sonos
+          - input_boolean.group_basement_sonos
+          - input_boolean.group_office_sonos
+        title: Sonos Control
+        type: entities
+      - entity: media_player.living_room
+        type: media-control
+    icon: 'mdi:play-circle-outline'
+    path: media
+    title: Media
+  - badges: []
+    cards: []
+    icon: 'mdi:camera'
+    path: cameras
+    title: Cameras
+  - badges:
+      - sensor.new_commits
+    cards:
+      - entities:
+          - input_boolean.bedtime
+          - vacuum.roomba
+          - input_select.remote
+          - input_select.bedroom_remote
+          - input_select.sonos
+        title: Automation On Demand
+        type: entities
+      - entities:
+          - sensor.holidays_calendar
+          - input_select.holiday
+          - input_boolean.interior_holiday
+        title: Holiday Modes
+        type: entities
+      - entities:
+          - input_boolean.livingroom_rainbow
+          - input_boolean.office_rainbow
+          - input_boolean.front_porch_rainbow
+        title: Party Modes
+        type: entities
+      - entities:
+          - input_boolean.enable_security
+          - automation.security__motion_alarm
+          - automation.security__door_alarm
+          - input_boolean.panic_mode
+          - input_boolean.alarm_tripped
+          - wink.siren
+        title: Alarm
+        type: entities
+      - entities:
+          - input_boolean.lock_doors
+          - input_boolean.unlock_doors
+          - sensor.template_back_door_status
+          - lock.garage
+        title: Door Locks
+        type: entities
+      - entities:
+          - input_boolean.user1_away
+          - input_boolean.user1_away_driving
+          - input_boolean.user2_away
+          - input_boolean.user2_away_driving
+          - input_boolean.user1_home
+          - input_boolean.user2_home
+          - input_boolean.manual_user1_away
+          - input_boolean.manual_user2_away
+          - input_boolean.house_guest_away
+          - input_boolean.vacation_mode
+          - input_boolean.guest_mode
+        title: Location Controls
+        type: entities
+      - entities:
+          - input_boolean.disable_voice_greeting
+          - input_boolean.disable_doorbell
+          - input_boolean.disable_door_open_lights_on
+          - input_boolean.disable_exterior_on_sunset
+          - input_boolean.disable_exterior_off_night
+          - input_boolean.disable_auto_garage
+          - input_boolean.disable_home_away
+          - input_boolean.disable_interior_lights_sunset
+          - input_boolean.disable_lights_morning
+          - input_boolean.disable_lock_unlock_doors
+          - input_boolean.disable_media_lights
+          - input_boolean.disable_occupancy
+          - input_boolean.disable_rainy_day
+          - input_boolean.disable_water_sensors
+        title: Automation Override
+        type: entities
+    icon: 'mdi:robot'
+    path: automation
+    title: Automation
+  - badges: []
+    cards:
+      - entities:
+          - device_tracker.zbayne_zbayne
+          - device_tracker.hgerard_hgerard
+        title: Household
+        type: entities
+      - entities:
+          - binary_sensor.living_room_occupancy
+          - binary_sensor.main_floor_occupancy
+          - binary_sensor.kitchen_occupancy
+          - binary_sensor.bedroom_occupancy
+          - binary_sensor.bathroom_occupancy
+          - binary_sensor.office_occupancy
+          - binary_sensor.user2_office_occupancy
+          - binary_sensor.guest_bedroom_occupancy
+          - binary_sensor.basement_occupancy
+          - binary_sensor.laundry_room_occupancy
+        title: Occupancy
+        type: entities
+      - entities:
+          - binary_sensor.front_door_opened
+          - binary_sensor.back_door_opened
+          - binary_sensor.basement_door_opened
+        title: Doors
+        type: entities
+      - entities:
+          - binary_sensor.basment_leak_sensor
+          - binary_sensor.sump_pump_water_sensor_liquid_detected
+        title: Water Sensors
+        type: glance
+      - entities:
+          - sensor.roomba_batt
+          - sensor.ring_front_door_battery
+          - sensor.front_door_lock_batt
+          - sensor.back_door_lock_batt
+          - sensor.basement_door_lock_batt
+          - sensor.siren_batt
+          - sensor.front_door_sensor_batt
+          - sensor.back_door_sensor_batt
+          - sensor.basement_door_sensor_batt
+          - sensor.basement_drain_water_sensor_batt
+          - sensor.sump_pump_water_sensor_batt
+        title: Battery Levels
+        type: entities
+      - entities:
+          - sensor.uptime
+          - updater.updater
+        title: System
+        type: entities
+    icon: 'mdi:gauge'
+    path: sensors
+    title: Sensors
+  - badges: []
+    cards:
+      - entities:
+          - switch.node23
+          - cover.garagedoor
+        title: Garage
+        type: entities
+      - entities:
+          - sensor.z_to_home
+          - sensor.h_to_home
+          - sensor.z_to_work
+          - sensor.user2_to_redacted
+          - sensor.user2_to_redacted
+        title: Travel Times
+        type: entities
+      - entities:
+          - icon: 'mdi:cctv'
+            name: I-64 @ RT-94
+            type: weblink
+            url: 'rtmp://168.166.124.201:1935/rtplive/MODOT_CAM_083'
+        title: Traffic Camera Feeds
+        type: entities
+    icon: 'mdi:car'
+    path: auto
+    title: Auto
+  - badges:
+      - sensor.new_commits
+    cards:
+      - entities:
+          - input_boolean.user1_greeting
+          - input_boolean.redacted_visiting
+          - input_boolean.garage_door
+          - input_boolean.redacted_visiting
+          - input_boolean.redacted_visiting
+          - input_boolean.redacted_visiting
+          - input_boolean.redacted_visiting
+          - input_boolean.user2_greeting
+          - input_boolean.user2_working
+          - input_boolean.redacted_visiting
+          - input_boolean.redacted_visiting
+          - input_boolean.watching_plex
+          - input_boolean.bedroom_tv
+        title: Input Boolean
+        type: entities
+      - entity: media_player.plex_living_room
+        type: media-control
+      - entity: media_player.plex_bedroom
+        type: media-control
+      - entity: media_player.plex_office
+        type: media-control
+      - entity: media_player.plex_guest_bedroom
+        type: media-control
+      - entities:
+          - automation.automation__bedtime
+          - automation.bedtime__reset_switch
+          - automation.lights___turn_garage_light_off_after_5_min
+          - automation.lights__garage_motion_light
+          - automation.lights__turn_outside_lights_on
+          - automation.lights__turn_tree_off
+          - automation.lights__turn_tree_on
+          - automation.lights__turn_basment_light_off_after_an_hour
+          - automation.lights__turn_garage_lights_on_when_door_open
+          - automation.lights__turn_off_front_porch_when_front_locks
+          - automation.lights__turn_on_front_porch_when_front_opens
+          - automation.lights__turn_outside_light_off
+          - automation.lights__turn_off_garage_lights_when_door_locked
+          - automation.lights__turn_on_garage_when_door_opens
+          - automation.locks__lock_doors_on_demand
+          - automation.locks__lock_front_door_after_30_mins
+          - automation.locks__lock_garage_door_after_30_mins
+          - automation.locks__reset_lock_doors_switch
+          - automation.locks__reset_unlock_doors_switch
+          - automation.locks__unlock_doors_on_demand
+          - automation.media__group_all_sonos
+          - automation.media__play_amped_music
+          - automation.media__play_plex_shuffle_music
+          - automation.media__play_little_rock_music_music
+          - automation.media__remote_external_update_media_center
+          - >-
+            automation.media__remote_start_activity_from_input_select_media_center
+          - >-
+            automation.media__sonos_start_activity_from_input_select_a_little_rock_music_music
+          - automation.media__sonos_start_activity_from_input_select_amped_music
+          - >-
+            automation.media__sonos_start_activity_from_input_select_plex_shuffle_music
+          - automation.media__sonos_stop_activity_from_input_select_off
+          - automation.notification__test
+          - automation.security__weekly_door_code_rotate
+          - automation.sensor__reset_feed_dog
+          - automation.alarm_away_mode_armed
+          - automation.alarm_triggered
+        title: all automations
+        type: entities
+      - entities:
+          - light.office_fan_green_led
+          - light.sonoff_s20_green_led
+          - light.node3
+          - light.node7
+          - light.node8
+          - light.zooz_unknown_typeb112_id261c_level_4
+          - light.node10
+          - light.node11
+          - light.zooz_unknown_typeb112_id261c_level_7
+          - light.node2
+          - light.node2_green_led
+        title: all lights
+        type: entities
+      - entities:
+          - switch.fan_switch
+          - switch.node2_switch_test
+          - switch.office_fan
+          - switch.sonoff_s20_relay
+          - switch.node23
+          - switch.node4
+          - switch.node5
+          - switch.node6
+          - switch.node21
+        title: all switches
+        type: entities
+      - entities:
+          - script.1522701113499
+        title: Script
+        type: entities
+    icon: 'mdi:none'
+    path: troubleshooting
+    title: Troubleshooting

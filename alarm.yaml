@@ -1,0 +1,87 @@
+##########################################################
+## CUSTOM ALARM COMPONENT ALARM.YAML
+## https://github.com/gazoscalvertos/Hass-Custom-Alarm
+## VERSION:  1.0.2
+## MODIFIED: 18/04/18
+## CHANGE LOG:
+## Add Multi Codes, names, pics
+## optional code to arm alarm
+## Default Interface password: HG28!!&dn
+##########################################################
+
+platform: bwalarm
+name: House
+panel:
+  cameras:
+  - camera.porch
+  - camera.driveway
+  hide_passcode: true
+  hide_sidebar: true
+  enable_sensors_panel: true
+  enable_camera_panel: true
+  camera_update_interval: '11'
+states:
+  armed_away:
+    immediate:
+    - binary_sensor.neo_coolcam_doorwindow_detector_sensor_2
+    - binary_sensor.basement_occupancy
+    - binary_sensor.bedroom_occupancy
+    - binary_sensor.ecolink_motion_detector_sensor
+    - binary_sensor.frontdoor
+    - binary_sensor.garagedoor
+    - binary_sensor.guest_bedroom_occupancy
+    - binary_sensor.slidingdoorsensor
+    - binary_sensor.slidingdoor
+    delayed: []
+    override: []
+    pending_time: 120
+    warning_time: 60
+    trigger_time: 600
+  armed_home:
+    immediate:
+    - binary_sensor.frontdoor
+    - binary_sensor.garagedoor
+    delayed: []
+    override: []
+    pending_time: 0
+    warning_time: 0
+    trigger_time: 600
+  armed_perimeter:
+    immediate: []
+    delayed: []
+    override: []
+    pending_time: 0
+    warning_time: 0
+    trigger_time: 600
+admin_password: '8472'
+enable_persistence: true
+code: '8472'
+panic_code: '3333'
+log_size: '100'
+passcode_attempts: '3'
+users:
+- id: 48aa185910a64116b133248abc8c6b2d
+  name: zbayne
+  enabled: true
+  code: '1070'
+  picture: /local/images/ha.png
+- id: b87b6c2cc0bc43bf858999a670c3103c
+  name: Heather
+  enabled: false
+  code: b87b6c2cc0bc43bf858999a670c3103c
+  picture: /local/images/ha.png
+- id: 33b4920e76c74350a1d147aa4746b94e
+  name: alarm
+  enabled: false
+  code: 33b4920e76c74350a1d147aa4746b94e
+  picture: /local/images/ha.png
+- id: 2e73959fbdcc4e20be7bd618ad06d037
+  name: Legacy API password user
+  enabled: false
+  code: 2e73959fbdcc4e20be7bd618ad06d037
+  picture: /local/images/ha.png
+- id: 16d4dec58ece43139b74355da1844653
+  name: Heather
+  enabled: false
+  code: 16d4dec58ece43139b74355da1844653
+  picture: /local/images/ha.png
