@@ -1,0 +1,11 @@
+  - platform: google_travel_time
+    name: z_to_home
+    api_key: !secret mapsapi
+    origin: !secret deviceidz
+    destination: !secret homeaddress
+  - platform: google_travel_time
+    name: z_to_work
+    api_key: !secret mapsapi
+    origin: !secret deviceidz
+    destination: !secret zworkaddress
+

@@ -1,4 +1,6 @@
   - platform: mqtt
     name: "Feed Dog"
     state_topic: "sensor/feeddog"
+    payload_on: "Has been"
+    payload_off: "Has not been"
     retain: true

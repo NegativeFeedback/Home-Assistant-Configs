@@ -17,3 +17,4 @@ pyozw.sqlite
 nest.conf
 .uuid
 *.state
+entity_registry.yaml 

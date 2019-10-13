@@ -20,11 +20,6 @@ http:
 
 frontend:
   javascript_version: latest
-panel_iframe:
-  router:
-    title: 'Router'
-    icon: 'mdi:router-wireless'
-    url: 'https://10.0.0.1:8081'
 config:
 discovery:
 updater:
@@ -69,27 +64,22 @@ device_tracker:
     waypoint_whitelist:
       - zbayne
 
-insteon_local:
-  host: 10.0.0.132
-  username: !secret insteonuser
-  password: !secret insteonpass
-  timeout: 10
-  port: 25105
-hue:
-  bridges:
-    - host: 10.0.0.75
-      filename: phue.conf
-group: !include groups.yaml
-
+#group: !include groups.yaml
 media_player:
   - platform: plex
+    entity_namespace: 'plex'
+  - platform: sonos
+    hosts:
+      - 10.0.50.240
+      - 10.0.50.241
   - platform: roku
-  - platform: cast
-
+    hosts:
+      - 10.0.50.250
 
 zwave:
   usb_path: /dev/ttyACM0
   polling_interval: 30000
+  network_key: !secret zwavenetwork
   device_config:
     switch.ge_12722_onoff_relay_switch_switch:
       polling_intensity: 1
