@@ -76,30 +76,12 @@ media_player:
     hosts:
       - 10.0.50.250
 
-zwave:
-  usb_path: /dev/ttyACM0
-  polling_interval: 30000
-  network_key: !secret zwavenetwork
-  device_config:
-    switch.ge_12722_onoff_relay_switch_switch:
-      polling_intensity: 1
-    switch.ge_12722_onoff_relay_switch_switch_2:
-      polling_intensity: 1
-
 tts:
   - platform: google
     language: 'en-us'
     cache: true
     cache_dir: /tmp/tts
     time_memory: 300
-
-zoneminder:
-  host: camera.ipa.gddnet.com
-  username: !secret zmuser
-  password: !secret zmpass
-
-camera:
-  - platform: zoneminder
 
 sensor: !include_dir_merge_list sensor
 automation: !include automations.yaml
