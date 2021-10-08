@@ -1,0 +1,2 @@
+zwavejshost : zwavejs.service.consul
+zwavejspass : {{ zwavesecrete }}
